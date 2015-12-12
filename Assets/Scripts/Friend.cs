@@ -33,7 +33,8 @@ public class Friend : MonoBehaviour {
 
 		// Set the spatial direction.
 		Direction = direction;
-		transform.localPosition = DirectionUtil.GetPartyPosition (Direction, spreadDistance);
+		Vector2 targetPosition = DirectionUtil.GetPartyPosition (Direction, spreadDistance);
+		GetComponentInChildren<TransformLerper> ().MoveTo (targetPosition, switchTime);
 
 		// Set the sprite.
 		SpriteRenderer spriteRenderer = GetComponentInChildren<SpriteRenderer> ();
