@@ -72,17 +72,17 @@ public class Projectile : MonoBehaviour {
 		HealthPool healthPool = other.GetComponent<HealthPool> ();
 		if (healthPool != null) {
 			healthPool.Damage (damage);
+
+			// Collision.
+			if (!penetrating) {
+				DestroySelf ();
+			}
 		}
 
 		// Apply force.
 		Rigidbody2D body = other.GetComponent<Rigidbody2D> ();
 		if (body != null) {
 			body.AddForce (velocity.normalized * force, ForceMode2D.Force);
-		}
-
-		// Collision.
-		if (!penetrating) {
-			DestroySelf ();
 		}
 	}
 
@@ -91,7 +91,7 @@ public class Projectile : MonoBehaviour {
 	/// </summary>
 	/// <param name="direction">Direction.</param>
 	public void Fire (Vector2 direction) {
-		velocity = direction * speed;
+		velocity = direction.normalized * speed;
 	}
 
 	/// <summary>
