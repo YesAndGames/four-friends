@@ -53,7 +53,7 @@ public class Projectile : MonoBehaviour {
 	void Update () {
 
 		// Movement.
-		transform.Translate (velocity * Time.deltaTime);
+		transform.Translate (velocity * Time.deltaTime, Space.World);
 
 		// Life span.
 		t += Time.deltaTime;
@@ -91,6 +91,13 @@ public class Projectile : MonoBehaviour {
 	/// </summary>
 	/// <param name="direction">Direction.</param>
 	public void Fire (Vector2 direction) {
+
+		// Face the direction.
+		float angle = Mathf.Atan2 (direction.y, direction.x);
+		float degrees = angle * Mathf.Rad2Deg;
+		transform.rotation = Quaternion.Euler (0, 0, degrees);
+
+		// Set velocity.
 		velocity = direction.normalized * speed;
 	}
 
