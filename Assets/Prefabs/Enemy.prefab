@@ -15,6 +15,7 @@ GameObject:
   - 50: {fileID: 5081174}
   - 114: {fileID: 11432482}
   - 114: {fileID: 11483250}
+  - 61: {fileID: 6133700}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
@@ -49,7 +50,20 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!61 &6133700
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 181374}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.39999998}
 --- !u!61 &6189118
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -181,6 +195,10 @@ Prefab:
       value: 
       objectReference: {fileID: 11432284, guid: fb406f25291f24019ad07b4d9e0173d5,
         type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 181374}
