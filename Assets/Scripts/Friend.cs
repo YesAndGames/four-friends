@@ -16,14 +16,11 @@ public class Friend : MonoBehaviour {
 	/// <value>Facing direction.</value>
 	public Direction Direction { get; private set; }
 
-	// Use this for initialization
+	/// <summary>
+	/// Initialize this component.
+	/// </summary>
 	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+		
 	}
 
 	/// <summary>
@@ -33,7 +30,29 @@ public class Friend : MonoBehaviour {
 	/// <param name="spreadDistance">The distance the party members spread when the move around.</param>
 	/// <param name="switchTime">Switch time.</param>
 	public void SetDirection (Direction direction, float spreadDistance, float switchTime = 0) {
+
+		// Set the spatial direction.
 		Direction = direction;
 		transform.localPosition = DirectionUtil.GetPartyPosition (Direction, spreadDistance);
+
+		// Set the sprite.
+		SpriteRenderer spriteRenderer = GetComponentInChildren<SpriteRenderer> ();
+		Sprite sprite = spriteRenderer.sprite;
+		switch (Direction) {
+		case Direction.North:
+			sprite = northSprite;
+			break;
+		case Direction.East:
+			sprite = eastSprite;
+			break;
+		case Direction.South:
+			sprite = southSprite;
+			break;
+		case Direction.West:
+			sprite = westSprite;
+			break;
+		}
+
+		spriteRenderer.sprite = sprite;
 	}
 }
