@@ -17,6 +17,11 @@ public static class Controls {
 	public static UnityEvent RotateRight = new UnityEvent ();
 
 	/// <summary>
+	/// Cardinal motion axes.
+	/// </summary>
+	public static float HorizontalAxis = 0, VerticalAxis = 0;
+
+	/// <summary>
 	/// Rotation controls are ready.
 	/// </summary>
 	private static bool rotateReady = false;
@@ -30,6 +35,8 @@ public static class Controls {
 	/// Update the controls.
 	/// </summary>
 	public static void Update () {
+		VerticalAxis = Input.GetAxis ("Vertical");
+		HorizontalAxis = Input.GetAxis ("Horizontal");
 		float rotateAxis = Input.GetAxis ("Rotate");
 
 		if (rotateReady) {

@@ -228,6 +228,7 @@ MonoBehaviour:
   westFriend: {fileID: 479573560}
   partySpread: 1
   rotateTime: .100000001
+  partyMovementSpeed: 10
 --- !u!1 &479573558
 GameObject:
   m_ObjectHideFlags: 0

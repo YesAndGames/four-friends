@@ -21,6 +21,11 @@ public class Party : MonoBehaviour {
 	[SerializeField] private float rotateTime = 0.1f;
 
 	/// <summary>
+	/// Movement speed of the party.
+	/// </summary>
+	[SerializeField] private float partyMovementSpeed = 10f;
+
+	/// <summary>
 	/// Initialize this component.
 	/// </summary>
 	void Start () {
@@ -38,6 +43,15 @@ public class Party : MonoBehaviour {
 	/// </summary>
 	void Update () {
 		Controls.Update ();
+
+		// Calculate movement speed this frame.
+		Vector2 velocity = new Vector2 (Controls.HorizontalAxis, Controls.VerticalAxis);
+		velocity.Normalize ();
+		velocity *= partyMovementSpeed;
+		velocity *= Time.deltaTime;
+
+		// Apply movement.
+		transform.Translate (velocity);
 	}
 
 	/// <summary>
