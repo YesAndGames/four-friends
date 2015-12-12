@@ -14,6 +14,7 @@ GameObject:
   - 61: {fileID: 6189118}
   - 50: {fileID: 5081174}
   - 114: {fileID: 11432482}
+  - 114: {fileID: 11483250}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
@@ -73,8 +74,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04f382bfa2fa436e9e1dc6844cde16c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 11432284, guid: 8db8baf445d8448149f60f080df3bcfe, type: 2}
-  projectileFireInterval: 3
   movementSpeed: 1
 --- !u!114 &11462228
 MonoBehaviour:
@@ -115,6 +114,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0bbb3851196a4bc6a62a8950fee2ffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11483250
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 181374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a4f86622d2be4ab0bf2ac5469f851cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 11432284, guid: 8db8baf445d8448149f60f080df3bcfe, type: 2}
+  attackInterval: 3
 --- !u!212 &21222578
 SpriteRenderer:
   m_ObjectHideFlags: 1

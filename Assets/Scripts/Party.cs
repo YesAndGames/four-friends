@@ -39,10 +39,6 @@ public class Party : MonoBehaviour {
 		// Hook control events.
 		Controls.RotateLeft.AddListener (OnRotateLeft);
 		Controls.RotateRight.AddListener (OnRotateRight);
-		Controls.FireNorth.AddListener (OnFireNorth);
-		Controls.FireEast.AddListener (OnFireEast);
-		Controls.FireSouth.AddListener (OnFireSouth);
-		Controls.FireWest.AddListener (OnFireWest);
 	}
 
 	/// <summary>
@@ -56,6 +52,12 @@ public class Party : MonoBehaviour {
 		velocity.Normalize ();
 		velocity *= partyMovementSpeed;
 		velocity *= Time.deltaTime;
+
+		// Set attacking.
+		northFriend.GetComponent<AttackController> ().Attacking = Controls.FireNorth;
+		eastFriend.GetComponent<AttackController> ().Attacking = Controls.FireEast;
+		southFriend.GetComponent<AttackController> ().Attacking = Controls.FireSouth;
+		westFriend.GetComponent<AttackController> ().Attacking = Controls.FireWest;
 
 		// Apply movement.
 		transform.Translate (velocity);
@@ -91,33 +93,5 @@ public class Party : MonoBehaviour {
 		westFriend = southFriend;
 		southFriend = eastFriend;
 		eastFriend = cachedFriend;
-	}
-
-	/// <summary>
-	/// Instruct north Friend to fire.
-	/// </summary>
-	private void OnFireNorth () {
-		northFriend.FireProjectile ();
-	}
-
-	/// <summary>
-	/// Instruct east Friend to fire.
-	/// </summary>
-	private void OnFireEast () {
-		eastFriend.FireProjectile ();
-	}
-
-	/// <summary>
-	/// Instruct south Friend to fire.
-	/// </summary>
-	private void OnFireSouth () {
-		southFriend.FireProjectile ();
-	}
-
-	/// <summary>
-	/// Instruct west Friend to fire.
-	/// </summary>
-	private void OnFireWest () {
-		westFriend.FireProjectile ();
 	}
 }

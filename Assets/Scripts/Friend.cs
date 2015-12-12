@@ -11,22 +11,10 @@ public class Friend : MonoBehaviour {
 	[SerializeField] private Sprite northSprite, eastSprite, southSprite, westSprite;
 
 	/// <summary>
-	/// The projectile this Friend fires.
-	/// </summary>
-	[SerializeField] private Projectile projectilePrefab;
-
-	/// <summary>
 	/// The current direction this Friend is facing.
 	/// </summary>
 	/// <value>Facing direction.</value>
 	public Direction Direction { get; private set; }
-
-	/// <summary>
-	/// Initialize this component.
-	/// </summary>
-	void Start () {
-		
-	}
 
 	/// <summary>
 	/// Sets the direction this friend is facing.
@@ -40,6 +28,7 @@ public class Friend : MonoBehaviour {
 		Direction = direction;
 		Vector2 targetPosition = DirectionUtil.GetDirectionVector (Direction, spreadDistance);
 		GetComponentInChildren<TransformLerper> ().MoveTo (targetPosition, switchTime);
+		GetComponent<AttackController> ().Direction = targetPosition.normalized;
 
 		// Set the sprite.
 		SpriteRenderer spriteRenderer = GetComponentInChildren<SpriteRenderer> ();
@@ -60,15 +49,5 @@ public class Friend : MonoBehaviour {
 		}
 
 		spriteRenderer.sprite = sprite;
-	}
-
-	/// <summary>
-	/// Fire a projectile!
-	/// </summary>
-	public void FireProjectile () {
-		Vector2 direction = DirectionUtil.GetDirectionVector (Direction);
-		Projectile projectile = Instantiate (projectilePrefab, transform.position, Quaternion.identity) as Projectile;
-		projectile.gameObject.layer = gameObject.layer;
-		projectile.Fire (direction);
 	}
 }
