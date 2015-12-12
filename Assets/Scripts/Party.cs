@@ -22,7 +22,10 @@ public class Party : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		northFriend.SetDirection (Direction.North, partySpread);
+		eastFriend.SetDirection (Direction.East, partySpread);
+		southFriend.SetDirection (Direction.South, partySpread);
+		westFriend.SetDirection (Direction.West, partySpread);
 	}
 	
 	// Update is called once per frame
