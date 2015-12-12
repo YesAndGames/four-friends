@@ -68,6 +68,7 @@ public class Friend : MonoBehaviour {
 	public void FireProjectile () {
 		Vector2 direction = DirectionUtil.GetDirectionVector (Direction);
 		Projectile projectile = Instantiate (projectilePrefab, transform.position, Quaternion.identity) as Projectile;
+		projectile.gameObject.layer = gameObject.layer;
 		projectile.Fire (direction);
 	}
 }

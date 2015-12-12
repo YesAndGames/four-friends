@@ -16,6 +16,11 @@ public class Projectile : MonoBehaviour {
 	[SerializeField] private float speed = 10f;
 
 	/// <summary>
+	/// Amount of damage this projectile deals.
+	/// </summary>
+	[SerializeField] private int damage = 10;
+
+	/// <summary>
 	/// Current velocity of this projectile.
 	/// </summary>
 	private Vector2 velocity;
@@ -44,8 +49,15 @@ public class Projectile : MonoBehaviour {
 		t += Time.deltaTime;
 
 		if (t >= lifespan) {
-			Destroy (gameObject);
+			DestroySelf ();
 		}
+	}
+
+	/// <summary>
+	/// Fires when a trigger collides with this trigger.
+	/// </summary>
+	void OnTriggerEnter2D (Collider2D other) {
+		Debug.LogWarning (other.name);
 	}
 
 	/// <summary>
@@ -54,5 +66,12 @@ public class Projectile : MonoBehaviour {
 	/// <param name="direction">Direction.</param>
 	public void Fire (Vector2 direction) {
 		velocity = direction * speed;
+	}
+
+	/// <summary>
+	/// Destroys this projectile.
+	/// </summary>
+	private void DestroySelf () {
+		Destroy (gameObject);
 	}
 }
