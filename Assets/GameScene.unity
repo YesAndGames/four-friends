@@ -96,6 +96,7 @@ GameObject:
   - 212: {fileID: 64130528}
   - 114: {fileID: 64130529}
   - 114: {fileID: 64130530}
+  - 114: {fileID: 64130531}
   m_Layer: 0
   m_Name: Friend 2
   m_TagString: Untagged
@@ -167,6 +168,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36d73e257047f48d7b25b8ae4fadc569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &64130531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 64130526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0bbb3851196a4bc6a62a8950fee2ffb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &128325120
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,6 +239,7 @@ GameObject:
   - 212: {fileID: 479573561}
   - 114: {fileID: 479573560}
   - 114: {fileID: 479573562}
+  - 114: {fileID: 479573563}
   m_Layer: 0
   m_Name: Friend 4
   m_TagString: Untagged
@@ -296,6 +309,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36d73e257047f48d7b25b8ae4fadc569, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &479573563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 479573558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0bbb3851196a4bc6a62a8950fee2ffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &757894339
@@ -423,6 +447,7 @@ GameObject:
   - 212: {fileID: 1690083790}
   - 114: {fileID: 1690083789}
   - 114: {fileID: 1690083791}
+  - 114: {fileID: 1690083792}
   m_Layer: 0
   m_Name: Friend 1
   m_TagString: Untagged
@@ -480,7 +505,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -10
   m_Sprite: {fileID: 21300020, guid: 28153e6d2564047e39a1f2885b021e0d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1690083791
@@ -494,6 +519,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36d73e257047f48d7b25b8ae4fadc569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1690083792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1690083787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0bbb3851196a4bc6a62a8950fee2ffb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1727166526
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,6 +541,7 @@ GameObject:
   - 212: {fileID: 1727166529}
   - 114: {fileID: 1727166528}
   - 114: {fileID: 1727166530}
+  - 114: {fileID: 1727166531}
   m_Layer: 0
   m_Name: Friend 3
   m_TagString: Untagged
@@ -562,7 +599,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300056, guid: 28153e6d2564047e39a1f2885b021e0d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1727166530
@@ -574,5 +611,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36d73e257047f48d7b25b8ae4fadc569, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1727166531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1727166526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0bbb3851196a4bc6a62a8950fee2ffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
