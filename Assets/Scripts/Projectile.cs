@@ -16,6 +16,11 @@ public class Projectile : MonoBehaviour {
 	[SerializeField] private float speed = 10f;
 
 	/// <summary>
+	/// The rate at which this projectile scales uniformly.
+	/// </summary>
+	[SerializeField] private float scaling = 0;
+
+	/// <summary>
 	/// Amount of damage this projectile deals.
 	/// </summary>
 	[SerializeField] private int damage = 10;
@@ -54,6 +59,12 @@ public class Projectile : MonoBehaviour {
 
 		// Movement.
 		transform.Translate (velocity * Time.deltaTime, Space.World);
+
+		// Scaling.
+		Vector2 scale = new Vector2 (transform.localScale.x, transform.localScale.y);
+		float magnitude = scale.magnitude;
+		magnitude += scaling * Time.deltaTime;
+		transform.localScale = scale.normalized * magnitude;
 
 		// Life span.
 		t += Time.deltaTime;
