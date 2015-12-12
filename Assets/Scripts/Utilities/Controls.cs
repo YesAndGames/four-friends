@@ -17,6 +17,26 @@ public static class Controls {
 	public static UnityEvent RotateRight = new UnityEvent ();
 
 	/// <summary>
+	/// Fires when north fire control is triggered.
+	/// </summary>
+	public static UnityEvent FireNorth = new UnityEvent ();
+
+	/// <summary>
+	/// Fires when east fire control is triggered.
+	/// </summary>
+	public static UnityEvent FireEast = new UnityEvent ();
+
+	/// <summary>
+	/// Fires when south fire control is triggered.
+	/// </summary>
+	public static UnityEvent FireSouth = new UnityEvent ();
+
+	/// <summary>
+	/// Fires when west fire control is triggered.
+	/// </summary>
+	public static UnityEvent FireWest = new UnityEvent ();
+
+	/// <summary>
 	/// Cardinal motion axes.
 	/// </summary>
 	public static float HorizontalAxis = 0, VerticalAxis = 0;
@@ -35,8 +55,26 @@ public static class Controls {
 	/// Update the controls.
 	/// </summary>
 	public static void Update () {
+
+		// Movement controls.
 		VerticalAxis = Input.GetAxis ("Vertical");
 		HorizontalAxis = Input.GetAxis ("Horizontal");
+
+		// Fire controls.
+		if (Input.GetButtonUp ("Fire North")) {
+			FireNorth.Invoke ();
+		}
+		if (Input.GetButtonUp ("Fire East")) {
+			FireEast.Invoke ();
+		}
+		if (Input.GetButtonUp ("Fire South")) {
+			FireSouth.Invoke ();
+		}
+		if (Input.GetButtonUp ("Fire West")) {
+			FireWest.Invoke ();
+		}
+
+		// Rotate controls.
 		float rotateAxis = Input.GetAxis ("Rotate");
 
 		if (rotateReady) {

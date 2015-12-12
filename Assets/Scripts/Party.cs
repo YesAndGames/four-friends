@@ -29,13 +29,20 @@ public class Party : MonoBehaviour {
 	/// Initialize this component.
 	/// </summary>
 	void Start () {
+
+		// Initialize party positioning.
 		northFriend.SetDirection (Direction.North, partySpread);
 		eastFriend.SetDirection (Direction.East, partySpread);
 		southFriend.SetDirection (Direction.South, partySpread);
 		westFriend.SetDirection (Direction.West, partySpread);
 
+		// Hook control events.
 		Controls.RotateLeft.AddListener (OnRotateLeft);
 		Controls.RotateRight.AddListener (OnRotateRight);
+		Controls.FireNorth.AddListener (OnFireNorth);
+		Controls.FireEast.AddListener (OnFireEast);
+		Controls.FireSouth.AddListener (OnFireSouth);
+		Controls.FireWest.AddListener (OnFireWest);
 	}
 
 	/// <summary>
@@ -84,5 +91,33 @@ public class Party : MonoBehaviour {
 		westFriend = southFriend;
 		southFriend = eastFriend;
 		eastFriend = cachedFriend;
+	}
+
+	/// <summary>
+	/// Instruct north Friend to fire.
+	/// </summary>
+	private void OnFireNorth () {
+		northFriend.FireProjectile ();
+	}
+
+	/// <summary>
+	/// Instruct east Friend to fire.
+	/// </summary>
+	private void OnFireEast () {
+		eastFriend.FireProjectile ();
+	}
+
+	/// <summary>
+	/// Instruct south Friend to fire.
+	/// </summary>
+	private void OnFireSouth () {
+		southFriend.FireProjectile ();
+	}
+
+	/// <summary>
+	/// Instruct west Friend to fire.
+	/// </summary>
+	private void OnFireWest () {
+		westFriend.FireProjectile ();
 	}
 }

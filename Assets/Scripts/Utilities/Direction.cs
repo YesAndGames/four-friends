@@ -16,12 +16,12 @@ public enum Direction {
 public static class DirectionUtil {
 
 	/// <summary>
-	/// Gets the position a party member should be at given a specific direction.
+	/// Gets a direction vector from a direction and a magnitude
 	/// </summary>
 	/// <returns>The party position.</returns>
 	/// <param name="direction">Direction.</param>
-	/// <param name="spreadDistance">Spread distance.</param>
-	public static Vector2 GetPartyPosition (Direction direction, float spreadDistance) {
+	/// <param name="magnitude">Magnitude.</param>
+	public static Vector2 GetDirectionVector (Direction direction, float magnitude = 1) {
 		Vector2 final = Vector2.zero;
 		switch (direction) {
 		case Direction.North:
@@ -37,7 +37,8 @@ public static class DirectionUtil {
 			final = Vector2.left;
 			break;
 		}
-		final *= spreadDistance;
+		final.Normalize ();
+		final *= magnitude;
 		return final;
 	}
 }

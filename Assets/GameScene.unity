@@ -157,6 +157,7 @@ MonoBehaviour:
   eastSprite: {fileID: 21300026, guid: 28153e6d2564047e39a1f2885b021e0d, type: 3}
   southSprite: {fileID: 21300050, guid: 28153e6d2564047e39a1f2885b021e0d, type: 3}
   westSprite: {fileID: 21300074, guid: 28153e6d2564047e39a1f2885b021e0d, type: 3}
+  projectilePrefab: {fileID: 11432284, guid: 8db8baf445d8448149f60f080df3bcfe, type: 2}
 --- !u!114 &64130530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,6 +307,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 154886, guid: 2cb79037ac8d24aba9f0e95123ae9767, type: 2}
+      propertyPath: m_Name
+      value: Friend 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11446510, guid: 2cb79037ac8d24aba9f0e95123ae9767, type: 2}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 11432284, guid: 8db8baf445d8448149f60f080df3bcfe,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2cb79037ac8d24aba9f0e95123ae9767, type: 2}
   m_IsPrefabParent: 0
@@ -441,6 +451,7 @@ MonoBehaviour:
   eastSprite: {fileID: 21300044, guid: 28153e6d2564047e39a1f2885b021e0d, type: 3}
   southSprite: {fileID: 21300068, guid: 28153e6d2564047e39a1f2885b021e0d, type: 3}
   westSprite: {fileID: 21300092, guid: 28153e6d2564047e39a1f2885b021e0d, type: 3}
+  projectilePrefab: {fileID: 11432284, guid: 8db8baf445d8448149f60f080df3bcfe, type: 2}
 --- !u!212 &1690083790
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -535,6 +546,7 @@ MonoBehaviour:
   eastSprite: {fileID: 21300032, guid: 28153e6d2564047e39a1f2885b021e0d, type: 3}
   southSprite: {fileID: 21300056, guid: 28153e6d2564047e39a1f2885b021e0d, type: 3}
   westSprite: {fileID: 21300080, guid: 28153e6d2564047e39a1f2885b021e0d, type: 3}
+  projectilePrefab: {fileID: 11432284, guid: 8db8baf445d8448149f60f080df3bcfe, type: 2}
 --- !u!212 &1727166529
 SpriteRenderer:
   m_ObjectHideFlags: 0
