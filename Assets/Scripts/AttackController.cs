@@ -36,7 +36,6 @@ public class AttackController : MonoBehaviour {
 	/// Initialize this component.
 	/// </summary>
 	void Start () {
-		Direction = Vector2.left;
 		attackCooldownTimer = attackInterval;
 	}
 
