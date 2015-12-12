@@ -67,7 +67,7 @@ public class HealthPool : MonoBehaviour {
 	/// <param name="amount">Modification.</param>
 	private void Modify (int amount) {
 		health += amount;
-		health = Mathf.Clamp (health, 0, 1);
+		health = Mathf.Clamp (health, 0, maxHealth);
 
 		// Check death condition.
 		if (health == 0) {
