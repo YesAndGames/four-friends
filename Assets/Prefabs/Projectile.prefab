@@ -75,6 +75,8 @@ MonoBehaviour:
   lifespan: 10
   speed: 10
   damage: 10
+  force: 100
+  penetrating: 0
 --- !u!114 &11437418
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -142,6 +144,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Mass
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: force
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

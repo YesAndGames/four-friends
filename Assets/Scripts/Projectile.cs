@@ -21,6 +21,16 @@ public class Projectile : MonoBehaviour {
 	[SerializeField] private int damage = 10;
 
 	/// <summary>
+	/// The force applied on hit.
+	/// </summary>
+	[SerializeField] private float force = 100f;
+
+	/// <summary>
+	/// If set to true, this projectile penetrates colliders.
+	/// </summary>
+	[SerializeField] private bool penetrating = false;
+
+	/// <summary>
 	/// Current velocity of this projectile.
 	/// </summary>
 	private Vector2 velocity;
@@ -57,7 +67,23 @@ public class Projectile : MonoBehaviour {
 	/// Fires when a trigger collides with this trigger.
 	/// </summary>
 	void OnTriggerEnter2D (Collider2D other) {
-		Debug.LogWarning (other.name);
+
+		// Apply damage.
+		HealthPool healthPool = other.GetComponent<HealthPool> ();
+		if (healthPool != null) {
+			healthPool.Damage (damage);
+		}
+
+		// Apply force.
+		Rigidbody2D body = other.GetComponent<Rigidbody2D> ();
+		if (body != null) {
+			body.AddForce (velocity.normalized * force, ForceMode2D.Force);
+		}
+
+		// Collision.
+		if (!penetrating) {
+			DestroySelf ();
+		}
 	}
 
 	/// <summary>
