@@ -14,7 +14,7 @@ GameObject:
   - 50: {fileID: 5000480}
   - 61: {fileID: 6169776}
   m_Layer: 0
-  m_Name: Arrow
+  m_Name: Shield Wave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,8 +74,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifespan: 10
   speed: 10
-  damage: 10
-  force: 100
+  damage: 5
+  force: 500
   penetrating: 0
 --- !u!114 &11437418
 MonoBehaviour:
@@ -112,7 +112,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0185681a4484b4e1e8fd895c96a5f493, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d918de15a62d6486f9ae7b1d408efe68, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -147,13 +147,17 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: force
-      value: 100
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0185681a4484b4e1e8fd895c96a5f493,
+      objectReference: {fileID: 21300000, guid: d918de15a62d6486f9ae7b1d408efe68,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 113884}

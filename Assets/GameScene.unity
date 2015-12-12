@@ -99,7 +99,7 @@ GameObject:
   - 114: {fileID: 64130531}
   - 114: {fileID: 64130532}
   m_Layer: 8
-  m_Name: Friend 2
+  m_Name: Moz the Firefox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -141,7 +141,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300026, guid: 28153e6d2564047e39a1f2885b021e0d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 545bb9908a767474ca1644580faf1793, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &64130529
 MonoBehaviour:
@@ -154,10 +154,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb18d72ce99a54b10b37c2ca1b4fcf08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  northSprite: {fileID: 21300002, guid: 28153e6d2564047e39a1f2885b021e0d, type: 3}
-  eastSprite: {fileID: 21300026, guid: 28153e6d2564047e39a1f2885b021e0d, type: 3}
-  southSprite: {fileID: 21300050, guid: 28153e6d2564047e39a1f2885b021e0d, type: 3}
-  westSprite: {fileID: 21300074, guid: 28153e6d2564047e39a1f2885b021e0d, type: 3}
+  northSprite: {fileID: 21300006, guid: 545bb9908a767474ca1644580faf1793, type: 3}
+  eastSprite: {fileID: 21300000, guid: 545bb9908a767474ca1644580faf1793, type: 3}
+  southSprite: {fileID: 21300004, guid: 545bb9908a767474ca1644580faf1793, type: 3}
+  westSprite: {fileID: 21300002, guid: 545bb9908a767474ca1644580faf1793, type: 3}
 --- !u!114 &64130530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,7 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a4f86622d2be4ab0bf2ac5469f851cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 11432284, guid: fb406f25291f24019ad07b4d9e0173d5, type: 2}
+  projectilePrefab: {fileID: 11432284, guid: 038561d20304a4ce7af191c6bbe6531b, type: 2}
   attackInterval: .5
 --- !u!1 &757894339
 GameObject:
@@ -368,7 +368,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 154886, guid: 2cb79037ac8d24aba9f0e95123ae9767, type: 2}
       propertyPath: m_Name
-      value: Friend 4
+      value: Armashieldo
       objectReference: {fileID: 0}
     - target: {fileID: 11446510, guid: 2cb79037ac8d24aba9f0e95123ae9767, type: 2}
       propertyPath: projectilePrefab
@@ -379,6 +379,31 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 21293390, guid: 2cb79037ac8d24aba9f0e95123ae9767, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300018, guid: 545bb9908a767474ca1644580faf1793,
+        type: 3}
+    - target: {fileID: 11446510, guid: 2cb79037ac8d24aba9f0e95123ae9767, type: 2}
+      propertyPath: northSprite
+      value: 
+      objectReference: {fileID: 21300022, guid: 545bb9908a767474ca1644580faf1793,
+        type: 3}
+    - target: {fileID: 11446510, guid: 2cb79037ac8d24aba9f0e95123ae9767, type: 2}
+      propertyPath: eastSprite
+      value: 
+      objectReference: {fileID: 21300016, guid: 545bb9908a767474ca1644580faf1793,
+        type: 3}
+    - target: {fileID: 11446510, guid: 2cb79037ac8d24aba9f0e95123ae9767, type: 2}
+      propertyPath: southSprite
+      value: 
+      objectReference: {fileID: 21300020, guid: 545bb9908a767474ca1644580faf1793,
+        type: 3}
+    - target: {fileID: 11446510, guid: 2cb79037ac8d24aba9f0e95123ae9767, type: 2}
+      propertyPath: westSprite
+      value: 
+      objectReference: {fileID: 21300018, guid: 545bb9908a767474ca1644580faf1793,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2cb79037ac8d24aba9f0e95123ae9767, type: 2}
   m_IsPrefabParent: 0
@@ -482,7 +507,7 @@ GameObject:
   - 114: {fileID: 1690083792}
   - 114: {fileID: 1690083793}
   m_Layer: 8
-  m_Name: Friend 1
+  m_Name: Bearemy the Barbearian
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -511,10 +536,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb18d72ce99a54b10b37c2ca1b4fcf08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  northSprite: {fileID: 21300020, guid: 28153e6d2564047e39a1f2885b021e0d, type: 3}
-  eastSprite: {fileID: 21300044, guid: 28153e6d2564047e39a1f2885b021e0d, type: 3}
-  southSprite: {fileID: 21300068, guid: 28153e6d2564047e39a1f2885b021e0d, type: 3}
-  westSprite: {fileID: 21300092, guid: 28153e6d2564047e39a1f2885b021e0d, type: 3}
+  northSprite: {fileID: 21300014, guid: 545bb9908a767474ca1644580faf1793, type: 3}
+  eastSprite: {fileID: 21300008, guid: 545bb9908a767474ca1644580faf1793, type: 3}
+  southSprite: {fileID: 21300012, guid: 545bb9908a767474ca1644580faf1793, type: 3}
+  westSprite: {fileID: 21300010, guid: 545bb9908a767474ca1644580faf1793, type: 3}
 --- !u!212 &1690083790
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -539,7 +564,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: -10
-  m_Sprite: {fileID: 21300020, guid: 28153e6d2564047e39a1f2885b021e0d, type: 3}
+  m_Sprite: {fileID: 21300014, guid: 545bb9908a767474ca1644580faf1793, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1690083791
 MonoBehaviour:
@@ -590,7 +615,7 @@ GameObject:
   - 114: {fileID: 1727166531}
   - 114: {fileID: 1727166532}
   m_Layer: 8
-  m_Name: Friend 3
+  m_Name: Ranger Racoon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -619,10 +644,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb18d72ce99a54b10b37c2ca1b4fcf08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  northSprite: {fileID: 21300008, guid: 28153e6d2564047e39a1f2885b021e0d, type: 3}
-  eastSprite: {fileID: 21300032, guid: 28153e6d2564047e39a1f2885b021e0d, type: 3}
-  southSprite: {fileID: 21300056, guid: 28153e6d2564047e39a1f2885b021e0d, type: 3}
-  westSprite: {fileID: 21300080, guid: 28153e6d2564047e39a1f2885b021e0d, type: 3}
+  northSprite: {fileID: 21300030, guid: 545bb9908a767474ca1644580faf1793, type: 3}
+  eastSprite: {fileID: 21300024, guid: 545bb9908a767474ca1644580faf1793, type: 3}
+  southSprite: {fileID: 21300028, guid: 545bb9908a767474ca1644580faf1793, type: 3}
+  westSprite: {fileID: 21300026, guid: 545bb9908a767474ca1644580faf1793, type: 3}
 --- !u!212 &1727166529
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -647,7 +672,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300056, guid: 28153e6d2564047e39a1f2885b021e0d, type: 3}
+  m_Sprite: {fileID: 21300028, guid: 545bb9908a767474ca1644580faf1793, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1727166530
 MonoBehaviour:

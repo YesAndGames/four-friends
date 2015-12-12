@@ -1,0 +1,232 @@
+fileFormatVersion: 2
+guid: 545bb9908a767474ca1644580faf1793
+timeCreated: 1449952699
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Characters_0
+    21300002: Characters_1
+    21300004: Characters_2
+    21300006: Characters_3
+    21300008: Characters_4
+    21300010: Characters_5
+    21300012: Characters_6
+    21300014: Characters_7
+    21300016: Characters_8
+    21300018: Characters_9
+    21300020: Characters_10
+    21300022: Characters_11
+    21300024: Characters_12
+    21300026: Characters_13
+    21300028: Characters_14
+    21300030: Characters_15
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Characters_0
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 716
+        width: 122
+        height: 148
+      alignment: 9
+      pivot: {x: .531243145, y: .0879298002}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Characters_1
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 716
+        width: 122
+        height: 148
+      alignment: 9
+      pivot: {x: .421892256, y: .100807399}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Characters_2
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 714
+        width: 80
+        height: 150
+      alignment: 9
+      pivot: {x: .523822784, y: .0807185844}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Characters_3
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 713
+        width: 79
+        height: 151
+      alignment: 9
+      pivot: {x: .500000775, y: .108737968}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Characters_4
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 512
+        width: 181
+        height: 166
+      alignment: 9
+      pivot: {x: .5, y: .178535923}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Characters_5
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 512
+        width: 181
+        height: 168
+      alignment: 9
+      pivot: {x: .510529399, y: .148330331}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Characters_6
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 512
+        width: 190
+        height: 168
+      alignment: 9
+      pivot: {x: .5, y: .114297777}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Characters_7
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 510
+        width: 185
+        height: 167
+      alignment: 9
+      pivot: {x: .5, y: .146224514}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Characters_8
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 344
+        width: 157
+        height: 141
+      alignment: 9
+      pivot: {x: .487861007, y: .121538311}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Characters_9
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 344
+        width: 157
+        height: 141
+      alignment: 9
+      pivot: {x: .524277985, y: .148571476}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Characters_10
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 341
+        width: 84
+        height: 146
+      alignment: 9
+      pivot: {x: .477312356, y: .160606489}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Characters_11
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 347
+        width: 84
+        height: 140
+      alignment: 9
+      pivot: {x: .477312356, y: .11883501}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Characters_12
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 159
+        width: 165
+        height: 147
+      alignment: 9
+      pivot: {x: .546201944, y: .124021053}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Characters_13
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 159
+        width: 164
+        height: 146
+      alignment: 9
+      pivot: {x: .465137571, y: .134499326}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Characters_14
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 156
+        width: 70
+        height: 150
+      alignment: 9
+      pivot: {x: .500000417, y: .106129758}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Characters_15
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 161
+        width: 70
+        height: 147
+      alignment: 9
+      pivot: {x: .5, y: .124021359}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
