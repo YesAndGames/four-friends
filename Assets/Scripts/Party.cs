@@ -18,18 +18,57 @@ public class Party : MonoBehaviour {
 	/// <summary>
 	/// The speed that the party rotates.
 	/// </summary>
-	[SerializeField] private float rotateSpeed = 1f;
+	[SerializeField] private float rotateTime = 0.1f;
 
-	// Use this for initialization
+	/// <summary>
+	/// Initialize this component.
+	/// </summary>
 	void Start () {
 		northFriend.SetDirection (Direction.North, partySpread);
 		eastFriend.SetDirection (Direction.East, partySpread);
 		southFriend.SetDirection (Direction.South, partySpread);
 		westFriend.SetDirection (Direction.West, partySpread);
+
+		Controls.RotateLeft.AddListener (OnRotateLeft);
+		Controls.RotateRight.AddListener (OnRotateRight);
 	}
-	
-	// Update is called once per frame
+
+	/// <summary>
+	/// Update this component.
+	/// </summary>
 	void Update () {
-	
+		Controls.Update ();
+	}
+
+	/// <summary>
+	/// Rotate the party to the left.
+	/// </summary>
+	private void OnRotateLeft () {
+		northFriend.SetDirection (Direction.West, partySpread, rotateTime);
+		westFriend.SetDirection (Direction.South, partySpread, rotateTime);
+		southFriend.SetDirection (Direction.East, partySpread, rotateTime);
+		eastFriend.SetDirection (Direction.North, partySpread, rotateTime);
+
+		Friend cachedFriend = northFriend;
+		northFriend = eastFriend;
+		eastFriend = southFriend;
+		southFriend = westFriend;
+		westFriend = cachedFriend;
+	}
+
+	/// <summary>
+	/// Rotate the party to the right.
+	/// </summary>
+	private void OnRotateRight () {
+		northFriend.SetDirection (Direction.East, partySpread, rotateTime);
+		westFriend.SetDirection (Direction.North, partySpread, rotateTime);
+		southFriend.SetDirection (Direction.West, partySpread, rotateTime);
+		eastFriend.SetDirection (Direction.South, partySpread, rotateTime);
+
+		Friend cachedFriend = northFriend;
+		northFriend = westFriend;
+		westFriend = southFriend;
+		southFriend = eastFriend;
+		eastFriend = cachedFriend;
 	}
 }
