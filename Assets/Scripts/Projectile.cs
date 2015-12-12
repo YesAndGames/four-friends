@@ -31,9 +31,19 @@ public class Projectile : MonoBehaviour {
 	[SerializeField] private float force = 100f;
 
 	/// <summary>
+	/// If the force is explosive, it applies from the center outward, instead of using power.
+	/// </summary>
+	[SerializeField] private bool explosiveForce = false;
+
+	/// <summary>
 	/// If set to true, this projectile penetrates colliders.
 	/// </summary>
 	[SerializeField] private bool penetrating = false;
+
+	/// <summary>
+	/// If set in the editor, this will get spawned where this projectile dies.
+	/// </summary>
+	[SerializeField] private GameObject dropOnDestroy;
 
 	/// <summary>
 	/// Current velocity of this projectile.
@@ -93,7 +103,12 @@ public class Projectile : MonoBehaviour {
 		// Apply force.
 		Rigidbody2D body = other.GetComponent<Rigidbody2D> ();
 		if (body != null) {
-			body.AddForce (velocity.normalized * force, ForceMode2D.Force);
+			if (explosiveForce) {
+				body.AddForce ((body.transform.position - transform.position).normalized * force, ForceMode2D.Force);
+			}
+			else {
+				body.AddForce (velocity.normalized * force, ForceMode2D.Force);
+			}
 		}
 	}
 
@@ -116,6 +131,12 @@ public class Projectile : MonoBehaviour {
 	/// Destroys this projectile.
 	/// </summary>
 	private void DestroySelf () {
+
+		if (dropOnDestroy != null) {
+			Debug.LogWarning ("this");
+			Instantiate (dropOnDestroy, transform.position, Quaternion.identity);
+		}
+
 		Destroy (gameObject);
 	}
 }
