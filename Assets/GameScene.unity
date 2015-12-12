@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a4f86622d2be4ab0bf2ac5469f851cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 11432284, guid: 8db8baf445d8448149f60f080df3bcfe, type: 2}
+  projectilePrefab: {fileID: 11432284, guid: fb406f25291f24019ad07b4d9e0173d5, type: 2}
   attackInterval: .5
 --- !u!1 &128325120
 GameObject:
@@ -297,7 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a4f86622d2be4ab0bf2ac5469f851cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 11432284, guid: 8db8baf445d8448149f60f080df3bcfe, type: 2}
+  projectilePrefab: {fileID: 11432284, guid: fb406f25291f24019ad07b4d9e0173d5, type: 2}
   attackInterval: .5
 --- !u!1 &757894339
 GameObject:
@@ -574,7 +574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a4f86622d2be4ab0bf2ac5469f851cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 11432284, guid: 8db8baf445d8448149f60f080df3bcfe, type: 2}
+  projectilePrefab: {fileID: 11432284, guid: fb406f25291f24019ad07b4d9e0173d5, type: 2}
   attackInterval: .5
 --- !u!1 &1727166526
 GameObject:
