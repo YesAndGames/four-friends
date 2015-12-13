@@ -27,6 +27,13 @@ public class MainMenu : IGameState {
 	}
 
 	/// <summary>
+	/// Called when the user presses the other games button.
+	/// </summary>
+	public void OnPressOtherGamesButton () {
+		Application.OpenURL ("http://yesandgames.com");
+	}
+
+	/// <summary>
 	/// Called when play begins.
 	/// </summary>
 	public void OnBeginPlay () {
