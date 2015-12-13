@@ -19,7 +19,7 @@ public static class UnityUtil {
 	/// <param name="transform">The specified parent transform.</param>
 	public static void DestroyAllChildren (this Transform transform) {
 		for (int i = 0; i < transform.childCount; i++) {
-			Object.Destroy (transform.GetChild (i));
+			Object.Destroy (transform.GetChild (i).gameObject);
 		}
 	}
 
