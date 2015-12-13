@@ -44,7 +44,7 @@ MonoBehaviour:
   spawnPrefab: {fileID: 181374, guid: 4baa9d02e5cf54902bfba561a5d0d1a4, type: 2}
   spawnsInfinitely: 1
   numSpawns: 5
-  spawnInterval: 2
+  spawnInterval: 5
 --- !u!114 &11459266
 MonoBehaviour:
   m_ObjectHideFlags: 1
