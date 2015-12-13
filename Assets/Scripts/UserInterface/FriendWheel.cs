@@ -57,10 +57,10 @@ public class FriendWheel : MonoBehaviour {
 		Controls.RotateRight.AddListener (OnRotateRight);
 
 		// Hook Friend status monitoring.
-		party.GetFriend (Direction.North).GetComponent<HealthPool> ().TakeDamage.AddListener (UpdateAllFriends);
-		party.GetFriend (Direction.East).GetComponent<HealthPool> ().TakeDamage.AddListener (UpdateAllFriends);
-		party.GetFriend (Direction.South).GetComponent<HealthPool> ().TakeDamage.AddListener (UpdateAllFriends);
-		party.GetFriend (Direction.West).GetComponent<HealthPool> ().TakeDamage.AddListener (UpdateAllFriends);
+		party.GetFriend (Direction.North).GetComponent<HealthPool> ().OnHealthModified.AddListener (UpdateAllFriends);
+		party.GetFriend (Direction.East).GetComponent<HealthPool> ().OnHealthModified.AddListener (UpdateAllFriends);
+		party.GetFriend (Direction.South).GetComponent<HealthPool> ().OnHealthModified.AddListener (UpdateAllFriends);
+		party.GetFriend (Direction.West).GetComponent<HealthPool> ().OnHealthModified.AddListener (UpdateAllFriends);
 	}
 
 	/// <summary>

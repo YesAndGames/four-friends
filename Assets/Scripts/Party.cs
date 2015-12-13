@@ -82,6 +82,17 @@ public class Party : MonoBehaviour {
 	}
 
 	/// <summary>
+	/// Heal the entire party by the specified amount (each).
+	/// </summary>
+	/// <param name="healing">Healing.</param>
+	public void HealParty (int healing) {
+		northFriend.GetComponent<HealthPool> ().Heal (healing);
+		eastFriend.GetComponent<HealthPool> ().Heal (healing);
+		southFriend.GetComponent<HealthPool> ().Heal (healing);
+		westFriend.GetComponent<HealthPool> ().Heal (healing);
+	}
+
+	/// <summary>
 	/// Rotate the party to the left.
 	/// </summary>
 	private void OnRotateLeft () {

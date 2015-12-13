@@ -11,6 +11,12 @@ public class Friend : MonoBehaviour {
 	[SerializeField] private Sprite northSprite, eastSprite, southSprite, westSprite;
 
 	/// <summary>
+	/// Gets a reference to the Party this Friend is a member of.
+	/// </summary>
+	/// <value>This friend's party.</value>
+	public Party Party { get; private set; }
+
+	/// <summary>
 	/// The current direction this Friend is facing.
 	/// </summary>
 	/// <value>Facing direction.</value>
@@ -20,7 +26,9 @@ public class Friend : MonoBehaviour {
 	/// Initialize this component.
 	/// </summary>
 	void Start () {
+		Party = transform.parent.GetComponent<Party> ();
 		GetComponent<HealthPool> ().TakeDamage.AddListener (OnTakeDamage);
+		GetComponent<HealthPool> ().TakeHealing.AddListener (OnHealDamage);
 	}
 
 	/// <summary>
@@ -66,6 +74,17 @@ public class Friend : MonoBehaviour {
 		Animator anim = GetComponent<Animator> ();
 		if (anim != null) {
 			anim.Play ("Hurt", -1, 0);
+		}
+	}
+
+	/// <summary>
+	/// Called when this entity's health pool is healed.
+	/// </summary>
+	/// <param name="heal">Heal amount.</param>
+	private void OnHealDamage (int heal) {
+		Animator anim = GetComponent<Animator> ();
+		if (anim != null) {
+			anim.Play ("Healed", -1, 0);
 		}
 	}
 }

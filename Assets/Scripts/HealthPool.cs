@@ -22,6 +22,11 @@ public class HealthPool : MonoBehaviour {
 	public HealthEvent TakeHealing = new HealthEvent ();
 
 	/// <summary>
+	/// Fires when this health pool is modified at all.
+	/// </summary>
+	public HealthEvent OnHealthModified = new HealthEvent ();
+
+	/// <summary>
 	/// Fires when this health pool indicates death.
 	/// </summary>
 	public UnityEvent Death = new UnityEvent ();
@@ -74,6 +79,7 @@ public class HealthPool : MonoBehaviour {
 	private void Modify (int amount) {
 		health += amount;
 		health = Mathf.Clamp (health, 0, maxHealth);
+		OnHealthModified.Invoke (amount);
 
 		// Check death condition.
 		if (health == 0) {
