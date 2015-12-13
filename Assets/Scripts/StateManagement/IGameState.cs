@@ -19,31 +19,6 @@ public class IGameState : MonoBehaviour {
 	public string id;
 
 	/// <summary>
-	/// If true, when Waiting is flagged, the loading blind is shown over this screen.
-	/// </summary>
-	public bool showLoadingWhenWaiting = true;
-
-	/// <summary>
-	/// The amount of time the game waits before displaying the loading screen.
-	/// </summary>
-	public float loadScreenDelay = 0;
-
-	/// <summary>
-	/// The clear color of the background where nothing is rendered when this screen is loaded.
-	/// </summary>
-	public Color clearColor;
-
-	/// <summary>
-	/// The initial camera position when this screen is loaded.
-	/// </summary>
-	public Vector3 initialCameraPosition = new Vector3 (0, 0, -10);
-
-	/// <summary>
-	/// The initial size of the camera when this screen is loaded.
-	/// </summary>
-	public float initialCameraSize = 5;
-
-	/// <summary>
 	/// The GameStateManager this game state is managed by.
 	/// </summary>
 	public GameStateManager Manager {get; set;}
