@@ -7,6 +7,11 @@ using UnityEngine.UI;
 public class FriendWheel : MonoBehaviour {
 
 	/// <summary>
+	/// References to each friend so we can track their health.
+	/// </summary>
+	[SerializeField] private Friend northFriend, eastFriend, southFriend, westFriend;
+
+	/// <summary>
 	/// References to the friend buttons.
 	/// </summary>
 	[SerializeField] private RectTransform northButton, eastButton, southButton, westButton;
@@ -50,6 +55,43 @@ public class FriendWheel : MonoBehaviour {
 		// Hook controls.
 		Controls.RotateLeft.AddListener (OnRotateLeft);
 		Controls.RotateRight.AddListener (OnRotateRight);
+
+		// Hook Friend status monitoring.
+		northFriend.GetComponent<HealthPool> ().TakeDamage.AddListener ((int amount) => UpdateFriend (northFriend.Direction));
+		eastFriend.GetComponent<HealthPool> ().TakeDamage.AddListener ((int amount) => UpdateFriend (eastFriend.Direction));
+		southFriend.GetComponent<HealthPool> ().TakeDamage.AddListener ((int amount) => UpdateFriend (southFriend.Direction));
+		westFriend.GetComponent<HealthPool> ().TakeDamage.AddListener ((int amount) => UpdateFriend (westFriend.Direction));
+	}
+
+	/// <summary>
+	/// Updates this friend's status on the UI.
+	/// </summary>
+	/// <param name="direction">Direction.</param>
+	private void UpdateFriend (Direction direction) {
+		Friend friend = null;
+		RectTransform button = null;
+		switch (direction) {
+		case Direction.North:
+			friend = northFriend;
+			button = northButton;
+			break;
+		case Direction.East:
+			friend = eastFriend;
+			button = eastButton;
+			break;
+		case Direction.South:
+			friend = southFriend;
+			button = southButton;
+			break;
+		case Direction.West:
+			friend = westFriend;
+			button = westButton;
+			break;
+		}
+
+		if (friend != null && button != null) {
+			button.GetComponent<Image> ().fillAmount = friend.GetComponent<HealthPool> ().PercentHealth;
+		}
 	}
 
 	/// <summary>

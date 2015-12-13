@@ -27,6 +27,12 @@ public class HealthPool : MonoBehaviour {
 	public UnityEvent Death = new UnityEvent ();
 
 	/// <summary>
+	/// Calculates the percent health this health pool has currently.
+	/// </summary>
+	/// <value>The percent health.</value>
+	public float PercentHealth { get { return (float)health / (float)maxHealth; } }
+
+	/// <summary>
 	/// Maximum health in the health pool.
 	/// </summary>
 	[SerializeField] private int maxHealth = 100;

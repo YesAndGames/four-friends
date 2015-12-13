@@ -1502,6 +1502,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36250d6872b7649a7abe8f3456f04daa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  northFriend: {fileID: 1690083789}
+  eastFriend: {fileID: 64130529}
+  southFriend: {fileID: 1727166528}
+  westFriend: {fileID: 479573560}
   northButton: {fileID: 1549278560}
   eastButton: {fileID: 921211973}
   southButton: {fileID: 246184326}
