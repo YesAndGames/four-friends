@@ -66,4 +66,52 @@ public static class UnityUtil {
 		// Return the calculated position.
 		return inputPosition;
 	}
+
+	/// <summary>
+	/// Breadth first search of a Transform for a child of a given name.
+	/// </summary>
+	/// <returns>Child Transform with given name, null if not found.</returns>
+	/// <param name="parent">Parent to search.</param>
+	/// <param name="name">Name of child.</param>
+	public static Transform BreadthFirstSearchChildren (this Transform parent, string name) {
+
+		// If the child is found in the immediate children, return it.
+		Transform result = parent.Find (name);
+		if (result != null)
+			return result;
+
+		// Otherwise, recursively search immediate children.
+		foreach (Transform child in parent) {
+			result = child.BreadthFirstSearchChildren (name);
+			if (result != null)
+				return result;
+		}
+
+		// If it isn't found, return null.
+		return null;
+	}
+
+	/// <summary>
+	/// Depth first search of a Transform for a child of a given name.
+	/// </summary>
+	/// <returns>Child Transform with given name, null if not found.</returns>
+	/// <param name="parent">Parent to search.</param>
+	/// <param name="name">Name of child.</param>
+	public static Transform DepthFirstSearchChildren (this Transform parent, string name) {
+
+		// Search immediate children.
+		foreach (Transform child in parent) {
+			// If name is found, return Transform.
+			if (child.name == name)
+				return child;
+
+			// Otherwise search deeper.
+			Transform result = child.DepthFirstSearchChildren (name);
+			if (result != null)
+				return result;
+		}
+
+		// If it isn't found, return null.
+		return null;
+	}
 }
