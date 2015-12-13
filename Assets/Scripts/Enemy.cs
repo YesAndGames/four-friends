@@ -6,9 +6,33 @@
 public class Enemy : MonoBehaviour {
 
 	/// <summary>
+	/// Describes an Enemy's chance to drop a particular drop.
+	/// </summary>
+	[System.Serializable]
+	private class ChanceToDropEntry {
+		[SerializeField] private GameObject drop;
+		private float chance = 0.5f;
+	}
+
+	/// <summary>
 	/// The movement speed of this enemy.
 	/// </summary>
 	[SerializeField] private float movementSpeed = 1f;
+
+	/// <summary>
+	/// List of GameObjects that always drop when this enemy is killed.
+	/// </summary>
+	[SerializeField] private GameObject[] alwaysDropOnDeath;
+
+	/// <summary>
+	/// List of chance to drop entries for when this enemy is killed.
+	/// </summary>
+	[SerializeField] private ChanceToDropEntry[] chanceToDropOnDeath;
+
+	/// <summary>
+	/// Force applied to a thing on drop.
+	/// </summary>
+	[SerializeField] private float dropForce = 100f;
 
 	/// <summary>
 	/// This enemy's target Friend.
@@ -43,7 +67,30 @@ public class Enemy : MonoBehaviour {
 	/// Kill this enemy.
 	/// </summary>
 	public void Die () {
+		int i;
+
+		// Drop all the guaranteed drops.
+		for (i = 0; i < alwaysDropOnDeath.Length; i++) {
+			DropThing (alwaysDropOnDeath [i]);
+		}
+
 		Destroy (gameObject);
+	}
+
+	/// <summary>
+	/// Drops the thing.
+	/// </summary>
+	/// <param name="thing">Thing.</param>
+	private void DropThing (GameObject prefab) {
+		GameObject thing = Instantiate (prefab, transform.position, Quaternion.identity) as GameObject;
+
+		// Apply force maybe.
+		Rigidbody2D body = thing.GetComponent <Rigidbody2D> ();
+		if (body != null) {
+			float angle = Random.Range (0, Mathf.PI * 2);
+			Vector2 force = MathUtil.Vector2FromMagnitudeAndAngle (dropForce, angle);
+			body.AddForce (force);
+		}
 	}
 
 	/// <summary>
