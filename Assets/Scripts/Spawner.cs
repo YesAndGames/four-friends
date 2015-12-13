@@ -16,6 +16,11 @@ public class Spawner : MonoBehaviour {
 	[SerializeField] private bool spawnsInfinitely = true;
 
 	/// <summary>
+	/// If set to true, the party needs to trigger this portal.
+	/// </summary>
+	[SerializeField] private bool requiresTrigger = false;
+
+	/// <summary>
 	/// If this doesn't spawn infinitely, spawn this many things.
 	/// </summary>
 	[SerializeField] private int numSpawns = 5;
@@ -24,6 +29,11 @@ public class Spawner : MonoBehaviour {
 	/// Spawn a thing every spawnInterval seconds.
 	/// </summary>
 	[SerializeField] private float spawnInterval = 2f;
+
+	/// <summary>
+	/// Whether other not this spawner is spawning currently.
+	/// </summary>
+	private bool triggered = false;
 
 	/// <summary>
 	/// Time counter.
@@ -35,16 +45,30 @@ public class Spawner : MonoBehaviour {
 	/// </summary>
 	void Start () {
 		t = 0;
+		triggered = !requiresTrigger;
 	}
 
 	/// <summary>
 	/// Update this component.
 	/// </summary>
 	void Update () {
-		t += Time.deltaTime;
-		while (t >= spawnInterval) {
-			Spawn ();
-			t -= spawnInterval;
+		if (triggered) {
+			t += Time.deltaTime;
+			while (t >= spawnInterval) {
+				Spawn ();
+				t -= spawnInterval;
+			}
+		}
+	}
+
+	/// <summary>
+	/// Fires when another trigger enters this one.
+	/// </summary>
+	/// <param name="other">Other collider.</param>
+	void OnTriggerEnter2D (Collider2D other) {
+		Party party = other.GetComponent<Party> ();
+		if (party != null) {
+			triggered = true;
 		}
 	}
 
