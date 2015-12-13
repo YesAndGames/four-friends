@@ -369,7 +369,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: .699999988}
   serializedVersion: 2
-  m_Size: {x: 4, y: 4}
+  m_Size: {x: 2, y: 2}
 --- !u!50 &128325125
 Rigidbody2D:
   serializedVersion: 2
@@ -1507,7 +1507,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11422462, guid: 9e14a6a14c8f64940b82c61b4a670843, type: 2}
       propertyPath: spawnInterval
-      value: .25
+      value: .100000001
       objectReference: {fileID: 0}
     - target: {fileID: 11422462, guid: 9e14a6a14c8f64940b82c61b4a670843, type: 2}
       propertyPath: numSpawns
