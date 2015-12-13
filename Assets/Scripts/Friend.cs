@@ -17,6 +17,13 @@ public class Friend : MonoBehaviour {
 	public Direction Direction { get; private set; }
 
 	/// <summary>
+	/// Initialize this component.
+	/// </summary>
+	void Start () {
+		GetComponent<HealthPool> ().TakeDamage.AddListener (OnTakeDamage);
+	}
+
+	/// <summary>
 	/// Sets the direction this friend is facing.
 	/// </summary>
 	/// <param name="direction">Direction.</param>
@@ -49,5 +56,16 @@ public class Friend : MonoBehaviour {
 		}
 
 		spriteRenderer.sprite = sprite;
+	}
+
+	/// <summary>
+	/// Called when this entity's health pool takes damage.
+	/// </summary>
+	/// <param name="damage">Damage.</param>
+	private void OnTakeDamage (int damage) {
+		Animator anim = GetComponent<Animator> ();
+		if (anim != null) {
+			anim.Play ("Hurt", -1, 0);
+		}
 	}
 }

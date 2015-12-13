@@ -98,6 +98,9 @@ GameObject:
   - 114: {fileID: 64130530}
   - 114: {fileID: 64130531}
   - 114: {fileID: 64130532}
+  - 95: {fileID: 64130533}
+  - 61: {fileID: 64130534}
+  - 114: {fileID: 64130535}
   m_Layer: 8
   m_Name: Moz the Firefox
   m_TagString: Untagged
@@ -195,6 +198,53 @@ MonoBehaviour:
   numProjectiles: 1
   attackInterval: .5
   circularAttack: 0
+--- !u!95 &64130533
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 64130526}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d17f1950856a2442aa15ec0a01388e23, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!61 &64130534
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 64130526}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: -.0381166339, y: .609863877}
+  serializedVersion: 2
+  m_Size: {x: 1.22000003, y: 1.48000002}
+--- !u!114 &64130535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 64130526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1999508880e78483080984f5a5e03c86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Death:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  maxHealth: 100
 --- !u!1 &128325120
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,10 +254,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 128325121}
   - 114: {fileID: 128325122}
-  - 61: {fileID: 128325123}
   - 61: {fileID: 128325124}
   - 50: {fileID: 128325125}
-  - 114: {fileID: 128325126}
   m_Layer: 8
   m_Name: Party
   m_TagString: Untagged
@@ -250,19 +298,6 @@ MonoBehaviour:
   partySpread: .75
   rotateTime: .100000001
   partyMovementSpeed: 10
---- !u!61 &128325123
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 128325120}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 3, y: 3}
 --- !u!61 &128325124
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -292,23 +327,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &128325126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 128325120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1999508880e78483080984f5a5e03c86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Death:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  maxHealth: 100
 --- !u!1 &215426701
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,6 +544,53 @@ MonoBehaviour:
   numProjectiles: 1
   attackInterval: .5
   circularAttack: 0
+--- !u!95 &479573562
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 479573558}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d17f1950856a2442aa15ec0a01388e23, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!61 &479573563
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 479573558}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: -.0381164551, y: .495514214}
+  serializedVersion: 2
+  m_Size: {x: 1.57000005, y: 1.40999997}
+--- !u!114 &479573564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 479573558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1999508880e78483080984f5a5e03c86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Death:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  maxHealth: 100
 --- !u!1 &493569617
 GameObject:
   m_ObjectHideFlags: 0
@@ -1403,6 +1468,9 @@ GameObject:
   - 114: {fileID: 1690083791}
   - 114: {fileID: 1690083792}
   - 114: {fileID: 1690083793}
+  - 95: {fileID: 1690083794}
+  - 61: {fileID: 1690083795}
+  - 114: {fileID: 1690083796}
   m_Layer: 8
   m_Name: Bearemy the Barbearian
   m_TagString: Untagged
@@ -1500,6 +1568,53 @@ MonoBehaviour:
   numProjectiles: 1
   attackInterval: .5
   circularAttack: 0
+--- !u!95 &1690083794
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1690083787}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d17f1950856a2442aa15ec0a01388e23, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!61 &1690083795
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1690083787}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: .590805054}
+  serializedVersion: 2
+  m_Size: {x: 1.85000002, y: 1.67000008}
+--- !u!114 &1690083796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1690083787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1999508880e78483080984f5a5e03c86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Death:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  maxHealth: 100
 --- !u!1 &1724174625
 GameObject:
   m_ObjectHideFlags: 0
@@ -1580,6 +1695,9 @@ GameObject:
   - 114: {fileID: 1727166530}
   - 114: {fileID: 1727166531}
   - 114: {fileID: 1727166532}
+  - 95: {fileID: 1727166533}
+  - 61: {fileID: 1727166534}
+  - 114: {fileID: 1727166535}
   m_Layer: 8
   m_Name: Ranger Racoon
   m_TagString: Untagged
@@ -1677,6 +1795,53 @@ MonoBehaviour:
   numProjectiles: 1
   attackInterval: .5
   circularAttack: 0
+--- !u!95 &1727166533
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1727166526}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d17f1950856a2442aa15ec0a01388e23, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!61 &1727166534
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1727166526}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: -2.98023224e-07, y: .590805292}
+  serializedVersion: 2
+  m_Size: {x: .699999988, y: 1.5}
+--- !u!114 &1727166535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1727166526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1999508880e78483080984f5a5e03c86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Death:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  maxHealth: 100
 --- !u!1 &1870206217
 GameObject:
   m_ObjectHideFlags: 0
