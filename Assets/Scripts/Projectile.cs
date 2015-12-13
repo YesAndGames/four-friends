@@ -133,7 +133,6 @@ public class Projectile : MonoBehaviour {
 	private void DestroySelf () {
 
 		if (dropOnDestroy != null) {
-			Debug.LogWarning ("this");
 			Instantiate (dropOnDestroy, transform.position, Quaternion.identity);
 		}
 

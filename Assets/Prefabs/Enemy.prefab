@@ -140,7 +140,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 11432284, guid: e71427a63067f4252b09ac117dac3363, type: 2}
+  numProjectiles: 4
   attackInterval: 3
+  circularAttack: 1
 --- !u!212 &21222578
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -201,6 +203,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: movementSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: numProjectiles
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: circularAttack
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

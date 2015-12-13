@@ -23,9 +23,19 @@ public class AttackController : MonoBehaviour {
 	[SerializeField] private Projectile projectilePrefab;
 
 	/// <summary>
+	/// The number of projectiles fired with each shot.
+	/// </summary>
+	[SerializeField] private int numProjectiles = 1;
+
+	/// <summary>
 	/// Interval of time between shots.
 	/// </summary>
 	[SerializeField] private float attackInterval = 3f;
+
+	/// <summary>
+	/// If set to true, direction for attacks don't matter, instead projectiles fire in circles.
+	/// </summary>
+	[SerializeField] private bool circularAttack = false;
 
 	/// <summary>
 	/// Time for projectile shots.
@@ -47,11 +57,31 @@ public class AttackController : MonoBehaviour {
 		attackCooldownTimer += Time.deltaTime;
 		if (attackCooldownTimer >= attackInterval) {
 			if (Attacking) {
-				FireProjectile (Direction);
+				Attack ();
 				attackCooldownTimer -= attackInterval;
 			}
 			else {
 				attackCooldownTimer = attackInterval;
+			}
+		}
+	}
+
+	/// <summary>
+	/// Fire the attack!
+	/// </summary>
+	private void Attack () {
+		if (numProjectiles > 0) {
+			if (circularAttack) {
+				float angleInterval = 360f / numProjectiles;
+				float angle = 0;
+				for (int i = 0; i < numProjectiles; i++) {
+					Vector2 direction = MathUtil.Vector2FromMagnitudeAndAngle (1, angle * Mathf.Deg2Rad);
+					FireProjectile (direction);
+					angle += angleInterval;
+				}
+			}
+			else {
+				FireProjectile (Direction);
 			}
 		}
 	}
