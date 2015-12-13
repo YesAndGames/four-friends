@@ -20,9 +20,9 @@ public class HealthPoolModifierPickup : Pickup {
 		Friend friend = other.GetComponent<Friend> ();
 		if (friend != null) {
 			friend.Party.HealParty (modification);
-		}
 
-		// Destroy self.
-		base.OnPickup (other);
+			// Destroy self.
+			base.OnPickup (other);
+		}
 	}
 }
