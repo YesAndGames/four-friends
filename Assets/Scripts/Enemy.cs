@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 /// <summary>
 /// Manages an enemy.
@@ -10,8 +11,8 @@ public class Enemy : MonoBehaviour {
 	/// </summary>
 	[System.Serializable]
 	private class ChanceToDropEntry {
-		[SerializeField] private GameObject drop;
-		private float chance = 0.5f;
+		public GameObject drop;
+		public float chance = 0.5f;
 	}
 
 	/// <summary>
@@ -74,6 +75,16 @@ public class Enemy : MonoBehaviour {
 			DropThing (alwaysDropOnDeath [i]);
 		}
 
+		// Figure out potential drops based on random rolls.
+		for (i = 0; i < chanceToDropOnDeath.Length; i++) {
+			float roll = Random.value;
+			ChanceToDropEntry entry = chanceToDropOnDeath [i];
+			if (roll >= entry.chance) {
+				DropThing (entry.drop);
+			}
+		}
+
+		// Die.
 		Destroy (gameObject);
 	}
 
