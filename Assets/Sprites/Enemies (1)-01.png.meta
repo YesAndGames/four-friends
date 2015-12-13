@@ -1,0 +1,100 @@
+fileFormatVersion: 2
+guid: c5ab6de6c33924b04bdf4039db3c0d63
+timeCreated: 1450041284
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Enemies (1)-01_0
+    21300002: Enemies (1)-01_1
+    21300004: Enemies (1)-01_2
+    21300006: Enemies (1)-01_3
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Enemies (1)-01_0
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 664
+        width: 60
+        height: 101
+      alignment: 9
+      pivot: {x: .500000358, y: .122609355}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Enemies (1)-01_1
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 626
+        width: 107
+        height: 135
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Enemies (1)-01_2
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 568
+        width: 269
+        height: 200
+      alignment: 9
+      pivot: {x: .5, y: .0616601557}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Enemies (1)-01_3
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 263
+        width: 259
+        height: 357
+      alignment: 9
+      pivot: {x: .617734432, y: .0569089577}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

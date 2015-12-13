@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections.Generic;
 
 /// <summary>
 /// Manages an enemy.
@@ -11,7 +10,15 @@ public class Enemy : MonoBehaviour {
 	/// </summary>
 	[System.Serializable]
 	private class ChanceToDropEntry {
+
+		/// <summary>
+		/// The thing that gets dropped.
+		/// </summary>
 		public GameObject drop;
+
+		/// <summary>
+		/// The chance this thing will drop.
+		/// </summary>
 		public float chance = 0.5f;
 	}
 
@@ -19,6 +26,11 @@ public class Enemy : MonoBehaviour {
 	/// The movement speed of this enemy.
 	/// </summary>
 	[SerializeField] private float movementSpeed = 1f;
+
+	/// <summary>
+	/// If set to true, dies on contact with a friend.
+	/// </summary>
+	[SerializeField] private bool diesOnContact = false;
 
 	/// <summary>
 	/// List of GameObjects that always drop when this enemy is killed.
@@ -45,12 +57,21 @@ public class Enemy : MonoBehaviour {
 	/// </summary>
 	void Start () {
 		GetComponent<HealthPool> ().TakeDamage.AddListener (OnTakeDamage);
-		GetComponent<AttackController> ().Attacking = true;
+
+		// Enable attacking all the time, if this Enemy attacks.
+		AttackController attack = GetComponent<AttackController> ();
+		if (attack != null) {
+			attack.Attacking = true;
+		}
+
+		// Begin AI routines.
 		ReevaluateBehavior ();
 		InvokeRepeating ("ReevaluateBehavior", 0, 5f);
 	}
-	
-	// Update is called once per frame
+
+	/// <summary>
+	/// Update personal income.
+	/// </summary>
 	void Update () {
 		if (target != null) {
 
@@ -60,7 +81,26 @@ public class Enemy : MonoBehaviour {
 			transform.Translate (velocity);
 
 			// Set attacking direction.
-			GetComponent<AttackController> ().Direction = direction;
+			AttackController attack = GetComponent<AttackController> ();
+			if (attack != null) {
+				GetComponent<AttackController> ().Direction = direction;
+			}
+		}
+	}
+
+	/// <summary>
+	/// Called when another trigger enters this one.
+	/// </summary>
+	void OnTriggerEnter2D (Collider2D other) {
+
+		// Friend contact.
+		Friend friend = other.GetComponent<Friend> ();
+		if (friend != null) {
+
+			// Death on contact.
+			if (diesOnContact) {
+				Die ();
+			}
 		}
 	}
 

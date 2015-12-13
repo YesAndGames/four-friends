@@ -107,6 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 1
+  diesOnContact: 0
   alwaysDropOnDeath: []
   chanceToDropOnDeath:
   - drop: {fileID: 125700, guid: 3e34be9c11e384585b2afbebc04f4553, type: 2}
