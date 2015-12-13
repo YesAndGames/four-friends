@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour {
 	/// Initialize this component.
 	/// </summary>
 	void Start () {
+		GetComponent<HealthPool> ().TakeDamage.AddListener (OnTakeDamage);
 		GetComponent<AttackController> ().Attacking = true;
 		ReevaluateBehavior ();
 		InvokeRepeating ("ReevaluateBehavior", 0, 5f);
@@ -65,6 +66,17 @@ public class Enemy : MonoBehaviour {
 		}
 		else {
 			target = null;
+		}
+	}
+
+	/// <summary>
+	/// Called when this entity's health pool takes damage.
+	/// </summary>
+	/// <param name="damage">Damage.</param>
+	private void OnTakeDamage (int damage) {
+		Animator anim = GetComponent<Animator> ();
+		if (anim != null) {
+			anim.Play ("Hurt", -1, 0);
 		}
 	}
 }
