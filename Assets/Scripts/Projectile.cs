@@ -120,7 +120,7 @@ public class Projectile : MonoBehaviour {
 		if (reflectsProjectiles) {
 			Projectile projectile = other.GetComponent<Projectile> ();
 			if (projectile != null) {
-				projectile.Reflect ();
+				projectile.Reflect (velocity);
 				projectile.gameObject.layer = gameObject.layer;
 			}
 		}
@@ -144,8 +144,8 @@ public class Projectile : MonoBehaviour {
 	/// <summary>
 	/// Reflect this projectile backwards.
 	/// </summary>
-	public void Reflect () {
-		velocity = -velocity;
+	public void Reflect (Vector2 reflectionForce) {
+		velocity += reflectionForce;
 	}
 
 	/// <summary>
