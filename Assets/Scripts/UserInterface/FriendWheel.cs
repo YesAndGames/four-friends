@@ -7,9 +7,9 @@ using UnityEngine.UI;
 public class FriendWheel : MonoBehaviour {
 
 	/// <summary>
-	/// References to each friend so we can track their health.
+	/// References to the party
 	/// </summary>
-	[SerializeField] private Friend northFriend, eastFriend, southFriend, westFriend;
+	[SerializeField] private Party party;
 
 	/// <summary>
 	/// References to the friend buttons.
@@ -57,41 +57,21 @@ public class FriendWheel : MonoBehaviour {
 		Controls.RotateRight.AddListener (OnRotateRight);
 
 		// Hook Friend status monitoring.
-		northFriend.GetComponent<HealthPool> ().TakeDamage.AddListener ((int amount) => UpdateFriend (northFriend.Direction));
-		eastFriend.GetComponent<HealthPool> ().TakeDamage.AddListener ((int amount) => UpdateFriend (eastFriend.Direction));
-		southFriend.GetComponent<HealthPool> ().TakeDamage.AddListener ((int amount) => UpdateFriend (southFriend.Direction));
-		westFriend.GetComponent<HealthPool> ().TakeDamage.AddListener ((int amount) => UpdateFriend (westFriend.Direction));
+		party.GetFriend (Direction.North).GetComponent<HealthPool> ().TakeDamage.AddListener (UpdateAllFriends);
+		party.GetFriend (Direction.East).GetComponent<HealthPool> ().TakeDamage.AddListener (UpdateAllFriends);
+		party.GetFriend (Direction.South).GetComponent<HealthPool> ().TakeDamage.AddListener (UpdateAllFriends);
+		party.GetFriend (Direction.West).GetComponent<HealthPool> ().TakeDamage.AddListener (UpdateAllFriends);
 	}
 
 	/// <summary>
-	/// Updates this friend's status on the UI.
+	/// Update the health pools! I'm lazy.
 	/// </summary>
-	/// <param name="direction">Direction.</param>
-	private void UpdateFriend (Direction direction) {
-		Friend friend = null;
-		RectTransform button = null;
-		switch (direction) {
-		case Direction.North:
-			friend = northFriend;
-			button = northButton;
-			break;
-		case Direction.East:
-			friend = eastFriend;
-			button = eastButton;
-			break;
-		case Direction.South:
-			friend = southFriend;
-			button = southButton;
-			break;
-		case Direction.West:
-			friend = westFriend;
-			button = westButton;
-			break;
-		}
-
-		if (friend != null && button != null) {
-			button.GetComponent<Image> ().fillAmount = friend.GetComponent<HealthPool> ().PercentHealth;
-		}
+	/// <param name="uselessInteger">Useless integer doesn't get used except in event hook.</param>
+	private void UpdateAllFriends (int uselessInteger = 0) {
+		northButton.GetComponent<Image> ().fillAmount = party.GetFriend (Direction.North).GetComponent<HealthPool> ().PercentHealth;
+		eastButton.GetComponent<Image> ().fillAmount = party.GetFriend (Direction.East).GetComponent<HealthPool> ().PercentHealth;
+		southButton.GetComponent<Image> ().fillAmount = party.GetFriend (Direction.South).GetComponent<HealthPool> ().PercentHealth;
+		westButton.GetComponent<Image> ().fillAmount = party.GetFriend (Direction.West).GetComponent<HealthPool> ().PercentHealth;
 	}
 
 	/// <summary>

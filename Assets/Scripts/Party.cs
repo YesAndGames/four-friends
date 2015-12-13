@@ -64,6 +64,24 @@ public class Party : MonoBehaviour {
 	}
 
 	/// <summary>
+	/// Get a reference to the friend in the specified direction.
+	/// </summary>
+	/// <param name="direction">Direction.</param>
+	public Friend GetFriend (Direction direction) {
+		switch (direction) {
+		case Direction.North:
+			return northFriend;
+		case Direction.East:
+			return eastFriend;
+		case Direction.South:
+			return southFriend;
+		case Direction.West:
+			return westFriend;
+		}
+		return null;
+	}
+
+	/// <summary>
 	/// Rotate the party to the left.
 	/// </summary>
 	private void OnRotateLeft () {
