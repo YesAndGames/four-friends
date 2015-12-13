@@ -247,7 +247,7 @@ MonoBehaviour:
   eastFriend: {fileID: 64130529}
   southFriend: {fileID: 1727166528}
   westFriend: {fileID: 479573560}
-  partySpread: 1
+  partySpread: .75
   rotateTime: .100000001
   partyMovementSpeed: 10
 --- !u!61 &128325123
