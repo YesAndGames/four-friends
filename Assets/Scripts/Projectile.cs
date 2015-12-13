@@ -41,6 +41,11 @@ public class Projectile : MonoBehaviour {
 	[SerializeField] private bool penetrating = false;
 
 	/// <summary>
+	/// If set to true, sends incoming projectiles from another layer backwards.
+	/// </summary>
+	[SerializeField] private bool reflectsProjectiles = false;
+
+	/// <summary>
 	/// If set in the editor, this will get spawned where this projectile dies.
 	/// </summary>
 	[SerializeField] private GameObject dropOnDestroy;
@@ -110,6 +115,15 @@ public class Projectile : MonoBehaviour {
 				body.AddForce (velocity.normalized * force, ForceMode2D.Force);
 			}
 		}
+
+		// Reflect projectiles.
+		if (reflectsProjectiles) {
+			Projectile projectile = other.GetComponent<Projectile> ();
+			if (projectile != null) {
+				projectile.Reflect ();
+				projectile.gameObject.layer = gameObject.layer;
+			}
+		}
 	}
 
 	/// <summary>
@@ -125,6 +139,13 @@ public class Projectile : MonoBehaviour {
 
 		// Set velocity.
 		velocity = direction.normalized * speed;
+	}
+
+	/// <summary>
+	/// Reflect this projectile backwards.
+	/// </summary>
+	public void Reflect () {
+		velocity = -velocity;
 	}
 
 	/// <summary>

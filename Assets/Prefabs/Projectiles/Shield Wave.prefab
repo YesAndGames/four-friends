@@ -77,7 +77,10 @@ MonoBehaviour:
   scaling: 10
   damage: 5
   force: 500
+  explosiveForce: 0
   penetrating: 1
+  reflectsProjectiles: 1
+  dropOnDestroy: {fileID: 0}
 --- !u!114 &11437418
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -182,6 +185,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: scaling
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: reflectsProjectiles
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
