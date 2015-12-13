@@ -74,9 +74,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifespan: 10
   speed: 10
+  scaling: 1
   damage: 10
   force: 100
+  explosiveForce: 0
   penetrating: 0
+  reflectsProjectiles: 0
+  dropOnDestroy: {fileID: 0}
 --- !u!114 &11437418
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -112,7 +116,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300164, guid: 28153e6d2564047e39a1f2885b021e0d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0185681a4484b4e1e8fd895c96a5f493, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -149,6 +153,11 @@ Prefab:
       propertyPath: force
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0185681a4484b4e1e8fd895c96a5f493,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 113884}

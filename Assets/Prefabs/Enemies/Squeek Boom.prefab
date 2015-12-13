@@ -14,7 +14,6 @@ GameObject:
   - 61: {fileID: 6189118}
   - 50: {fileID: 5081174}
   - 114: {fileID: 11432482}
-  - 114: {fileID: 11483250}
   - 61: {fileID: 6133700}
   - 95: {fileID: 9530716}
   m_Layer: 9
@@ -62,9 +61,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: .300000012}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.39999998}
+  m_Size: {x: .5, y: .699999988}
 --- !u!61 &6189118
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -75,9 +74,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: .300000012}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.39999998}
+  m_Size: {x: .5, y: .699999988}
 --- !u!95 &9530716
 Animator:
   serializedVersion: 3
@@ -106,13 +105,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04f382bfa2fa436e9e1dc6844cde16c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 1
-  diesOnContact: 0
-  alwaysDropOnDeath: []
-  chanceToDropOnDeath:
-  - drop: {fileID: 125700, guid: 3e34be9c11e384585b2afbebc04f4553, type: 2}
-    chance: .100000001
-  dropForce: 100
+  movementSpeed: 2
+  diesOnContact: 1
+  alwaysDropOnDeath:
+  - {fileID: 113884, guid: 3c3e2e1c155b946559ea4b3913570451, type: 2}
+  chanceToDropOnDeath: []
+  dropForce: 0
 --- !u!114 &11462228
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -152,21 +150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0bbb3851196a4bc6a62a8950fee2ffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11483250
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 181374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a4f86622d2be4ab0bf2ac5469f851cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 11432284, guid: e71427a63067f4252b09ac117dac3363, type: 2}
-  numProjectiles: 4
-  attackInterval: 3
-  circularAttack: 1
 --- !u!212 &21222578
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -191,7 +174,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: -27
-  m_Sprite: {fileID: 21300158, guid: 28153e6d2564047e39a1f2885b021e0d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c5ab6de6c33924b04bdf4039db3c0d63, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
