@@ -7,6 +7,16 @@ using UnityEngine.Events;
 public static class Controls {
 
 	/// <summary>
+	/// Fires when the select control is triggered.
+	/// </summary>
+	public static UnityEvent Select = new UnityEvent ();
+
+	/// <summary>
+	/// Fires when the cancel control is triggered.
+	/// </summary>
+	public static UnityEvent Cancel = new UnityEvent ();
+
+	/// <summary>
 	/// Fires when left rotate control is triggered.
 	/// </summary>
 	public static UnityEvent RotateLeft = new UnityEvent ();
@@ -40,6 +50,14 @@ public static class Controls {
 	/// Update the controls.
 	/// </summary>
 	public static void Update () {
+
+		// Selection controls.
+		if (Input.GetButtonDown ("Select")) {
+			Select.Invoke ();
+		}
+		if (Input.GetButtonDown ("Cancel")) {
+			Cancel.Invoke ();
+		}
 
 		// Movement controls.
 		VerticalAxis = Input.GetAxis ("Vertical");
