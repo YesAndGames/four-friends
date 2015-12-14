@@ -28,6 +28,7 @@ GameObject:
   - 198: {fileID: 19827380}
   - 199: {fileID: 19900210}
   - 114: {fileID: 11442682}
+  - 114: {fileID: 11449964}
   m_Layer: 0
   m_Name: Fire Zone
   m_TagString: Untagged
@@ -86,6 +87,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageOnEnter: 10
   forceOnEnter: 50000
+--- !u!114 &11449964
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 172252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d72c7d83b7b14335a5c57747bfa764e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeSpan: 5
 --- !u!198 &19827380
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -1207,7 +1220,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: lifeSpan
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 172252}
