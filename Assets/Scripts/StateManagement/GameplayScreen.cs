@@ -28,6 +28,13 @@ public class GameplayScreen : IGameState {
 	}
 
 	/// <summary>
+	/// Called when the player wins gameplay.
+	/// </summary>
+	public void OnVictory () {
+		PushState ("Victory");
+	}
+
+	/// <summary>
 	/// Call to invoke game over.
 	/// </summary>
 	private void OnGameOver () {

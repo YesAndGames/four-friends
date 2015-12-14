@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 /// <summary>
 /// Manages a door that moves the party somewhere and is maybe locked.
@@ -9,6 +10,11 @@ public class Door : MonoBehaviour {
 	/// Sprites that indicate locked state of the door.
 	/// </summary>
 	[SerializeField] private Sprite lockedSprite, unlockedSprite;
+
+	/// <summary>
+	/// Fires when the door enters.
+	/// </summary>
+	public UnityEvent OnEnter = new UnityEvent ();
 
 	/// <summary>
 	/// If set to true, this door is locked.
@@ -57,7 +63,10 @@ public class Door : MonoBehaviour {
 	/// </summary>
 	private void OnPartyEnters (Party party) {
 		if (!locked) {
-			party.transform.position = otherSide.transform.position;
+			if (otherSide != null) {
+				party.transform.position = otherSide.transform.position;
+			}
+			OnEnter.Invoke ();
 		}
 	}
 }
