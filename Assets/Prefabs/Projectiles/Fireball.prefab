@@ -15,7 +15,6 @@ GameObject:
   - 61: {fileID: 6169776}
   - 198: {fileID: 19830682}
   - 199: {fileID: 19938082}
-  - 111: {fileID: 11168364}
   m_Layer: 0
   m_Name: Fireball
   m_TagString: Untagged
@@ -64,21 +63,6 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: .100000001}
---- !u!111 &11168364
-Animation:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 113884}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 61b99f24bb9394b518b5e5762d81b0d2, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 61b99f24bb9394b518b5e5762d81b0d2, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &11432284
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -160,7 +144,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: .100000001
+      scalar: .25
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -284,10 +268,10 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4278201746
+        rgba: 4294967295
       minMaxState: 0
     startSize:
-      scalar: 1
+      scalar: .5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -373,7 +357,7 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 10
+      scalar: 100
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1173,7 +1157,7 @@ ParticleSystemRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97e59bee693049738bd0a1b2e9102e5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -1223,7 +1207,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300028, guid: 631fae7a99b02456c88882d67ef037b0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1f363f2c3fa6d43d0813895f29ffa3a8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -1293,6 +1277,26 @@ Prefab:
       propertyPath: m_Animation
       value: 
       objectReference: {fileID: 7400000, guid: 61b99f24bb9394b518b5e5762d81b0d2, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a97e59bee693049738bd0a1b2e9102e5, type: 2}
+    - target: {fileID: 0}
+      propertyPath: InitialModule.startColor.maxColor.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: InitialModule.startSize.scalar
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: EmissionModule.rate.scalar
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: .25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 113884}

@@ -80,6 +80,7 @@ MonoBehaviour:
   force: 100
   explosiveForce: 1
   penetrating: 1
+  reflectsProjectiles: 0
   dropOnDestroy: {fileID: 0}
 --- !u!114 &11437418
 MonoBehaviour:
@@ -266,7 +267,7 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4278201746
+        rgba: 4294967295
       minMaxState: 0
     startSize:
       scalar: 1
@@ -1155,7 +1156,7 @@ ParticleSystemRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97e59bee693049738bd0a1b2e9102e5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -1241,6 +1242,14 @@ Prefab:
       propertyPath: explosiveForce
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: InitialModule.startColor.maxColor.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a97e59bee693049738bd0a1b2e9102e5, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 113884}
