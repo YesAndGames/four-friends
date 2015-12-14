@@ -314,6 +314,7 @@ GameObject:
   - 58: {fileID: 1709027786}
   - 198: {fileID: 1709027789}
   - 199: {fileID: 1709027788}
+  - 114: {fileID: 1709027790}
   m_Layer: 0
   m_Name: Spit Zone
   m_TagString: Untagged
@@ -1436,3 +1437,16 @@ ParticleSystem:
     subEmitterCollision1: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterDeath1: {fileID: 0}
+--- !u!114 &1709027790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1709027785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8da89c28e613c4b13820e461ae7d956c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageOnEnter: 10
+  forceOnEnter: 50000
