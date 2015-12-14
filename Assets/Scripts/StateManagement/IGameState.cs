@@ -87,8 +87,10 @@ public class IGameState : MonoBehaviour {
 	/// </summary>
 	public virtual void OnExitState () {
 		// Exit children.
-		foreach (IGameStateChild child in stateChildren.Values) {
-			child.OnExitState ();
+		if (stateChildren != null) {
+			foreach (IGameStateChild child in stateChildren.Values) {
+				child.OnExitState ();
+			}
 		}
 	}
 
