@@ -94,6 +94,11 @@ public class Projectile : MonoBehaviour {
 	/// </summary>
 	void OnTriggerEnter2D (Collider2D other) {
 
+		// If collides with dungeon, destroy.
+		if (other.gameObject.layer == LayerMask.NameToLayer ("Dungeon")) {
+			DestroySelf ();
+		}
+
 		// Apply damage.
 		HealthPool healthPool = other.GetComponent<HealthPool> ();
 		if (healthPool != null) {
