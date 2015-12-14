@@ -76,7 +76,8 @@ public class Spawner : MonoBehaviour {
 	/// Spawn a thing.
 	/// </summary>
 	private void Spawn () {
-		Instantiate (spawnPrefab, transform.position, Quaternion.identity);
+		GameObject spawned = Instantiate (spawnPrefab, transform.position, Quaternion.identity) as GameObject;
+		spawned.transform.SetParent (transform.parent);
 
 		// Decrement remaining spawns.
 		if (!spawnsInfinitely) {
