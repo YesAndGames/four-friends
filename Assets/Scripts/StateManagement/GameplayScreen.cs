@@ -21,9 +21,16 @@ public class GameplayScreen : IGameState {
 	void OnDestroy () {
 		base.OnExitState ();
 
+		// Destroy loose projectiles.
 		Projectile[] looseProjectiles = FindObjectsOfType<Projectile> ();
 		for (int i = 0; i < looseProjectiles.Length; i++) {
 			Destroy (looseProjectiles [i].gameObject);
+		}
+
+		// Destroy loose zones.
+		Zone[] looseZones = FindObjectsOfType<Zone> ();
+		for (int i = 0; i < looseZones.Length; i++) {
+			Destroy (looseZones [i].gameObject);
 		}
 	}
 
