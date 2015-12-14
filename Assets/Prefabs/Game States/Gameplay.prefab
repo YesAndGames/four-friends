@@ -3850,7 +3850,7 @@ MonoBehaviour:
   spawnsInfinitely: 0
   requiresTrigger: 1
   numSpawns: 1
-  spawnInterval: .00999999978
+  spawnInterval: 1
 --- !u!114 &11497378
 MonoBehaviour:
   m_ObjectHideFlags: 1
