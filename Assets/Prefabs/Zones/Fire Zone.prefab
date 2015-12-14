@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8da89c28e613c4b13820e461ae7d956c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageOnEnter: 10
+  damageOnEnter: 5
   forceOnEnter: 50000
 --- !u!114 &11449964
 MonoBehaviour:
@@ -1223,6 +1223,10 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: lifeSpan
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: damageOnEnter
       value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
