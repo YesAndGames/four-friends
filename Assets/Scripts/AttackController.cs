@@ -38,6 +38,11 @@ public class AttackController : MonoBehaviour {
 	[SerializeField] private bool circularAttack = false;
 
 	/// <summary>
+	/// Sound that plays on attack.
+	/// </summary>
+	[SerializeField] private AudioClip attackSound;
+
+	/// <summary>
 	/// Time for projectile shots.
 	/// </summary>
 	private float attackCooldownTimer;
@@ -82,6 +87,12 @@ public class AttackController : MonoBehaviour {
 			}
 			else {
 				FireProjectile (Direction);
+			}
+
+			// Play audio.
+			if (attackSound != null) {
+				AudioSource source = GetComponent<AudioSource> ();
+				source.PlayOneShot (attackSound);
 			}
 		}
 	}

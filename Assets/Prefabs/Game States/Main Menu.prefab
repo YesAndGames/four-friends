@@ -733,7 +733,7 @@ MonoBehaviour:
   fade: 1
   hideDirection: 1
   hideDistance: 200
-  hideRate: 5
+  hideRate: 10
 --- !u!114 &11474470
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -861,7 +861,7 @@ MonoBehaviour:
   fade: 1
   hideDirection: 4
   hideDistance: 0
-  hideRate: 5
+  hideRate: 10
 --- !u!114 &11493566
 MonoBehaviour:
   m_ObjectHideFlags: 1
