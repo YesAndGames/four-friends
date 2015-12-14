@@ -57,7 +57,6 @@ public class Party : MonoBehaviour {
 	/// Update this component.
 	/// </summary>
 	void Update () {
-		Controls.Update ();
 
 		// Calculate movement speed this frame.
 		Vector2 velocity = new Vector2 (Controls.HorizontalAxis, Controls.VerticalAxis);

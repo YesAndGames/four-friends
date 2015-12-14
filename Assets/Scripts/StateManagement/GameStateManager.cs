@@ -74,6 +74,13 @@ public class GameStateManager : MonoBehaviour {
 	}
 
 	/// <summary>
+	/// Update this component.
+	/// </summary>
+	void Update () {
+		Controls.Update ();
+	}
+
+	/// <summary>
 	/// Transitions to a new game state from the current one. Clears the game
 	/// state stack under the new screen.
 	/// </summary>

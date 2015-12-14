@@ -13,7 +13,17 @@ public class MainMenu : IGameState {
 	public override void OnInitializeState () {
 		base.OnInitializeState ();
 
+		// Register hideables.
 		AddHideableElement ("Sqwad", false);
+		AddHideableElement ("Controls");
+
+		// Hook listeners for closing controls after shown.
+		GetGUIElement ("Controls").OnShown.AddListener ((h) => {
+			Controls.Select.AddListener (HideControls);
+			Controls.Cancel.AddListener (HideControls);
+		});
+
+		// Initialize start selection.
 		EventSystem.current.SetSelectedGameObject (GuiCanvas.transform.Find ("Buttons Container/Play Button").gameObject);
 	}
 
@@ -23,6 +33,14 @@ public class MainMenu : IGameState {
 	public void OnPressPlayButton () {
 		HideGUIElement ("Sqwad");
 		EventSystem.current.SetSelectedGameObject (null);
+		SetAllButtonsEnabled (false);
+	}
+
+	/// <summary>
+	/// Called when the user presses the controls button.
+	/// </summary>
+	public void OnPressControlsButton () {
+		ShowGUIElement ("Controls");
 		SetAllButtonsEnabled (false);
 	}
 
@@ -38,6 +56,16 @@ public class MainMenu : IGameState {
 	/// </summary>
 	public void OnBeginPlay () {
 		Manager.PushState ("Gameplay");
+	}
+
+	/// <summary>
+	/// Hides the controls screen.
+	/// </summary>
+	private void HideControls () {
+		HideGUIElement ("Controls");
+		SetAllButtonsEnabled (true);
+		Controls.Select.RemoveListener (HideControls);
+		Controls.Cancel.RemoveListener (HideControls);
 	}
 
 	/// <summary>
