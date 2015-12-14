@@ -29,6 +29,7 @@ public class Friend : MonoBehaviour {
 		Party = transform.parent.GetComponent<Party> ();
 		GetComponent<HealthPool> ().TakeDamage.AddListener (OnTakeDamage);
 		GetComponent<HealthPool> ().TakeHealing.AddListener (OnHealDamage);
+		GetComponent<HealthPool> ().Death.AddListener (OnDie);
 	}
 
 	/// <summary>
@@ -86,5 +87,26 @@ public class Friend : MonoBehaviour {
 		if (anim != null) {
 			anim.Play ("Healed", -1, 0);
 		}
+
+		// Revive this Friend.
+		if (heal > 0) {
+			SetAlive (true);
+		}
+	}
+
+	/// <summary>
+	/// This Friend dies.
+	/// </summary>
+	private void OnDie () {
+		SetAlive (false);
+	}
+
+	/// <summary>
+	/// Set a flag indicating whether or not this Friend is dead or alive.
+	/// </summary>
+	private void SetAlive (bool alive) {
+
+		// Turn attack on/off.
+		GetComponent<AttackController> ().enabled = alive;
 	}
 }
