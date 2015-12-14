@@ -38,6 +38,12 @@ public class HealthPool : MonoBehaviour {
 	public float PercentHealth { get { return (float)health / (float)maxHealth; } }
 
 	/// <summary>
+	/// Checks if this health pool has no health left.
+	/// </summary>
+	/// <value><c>true</c> if this instance is dead; otherwise, <c>false</c>.</value>
+	public bool IsDead { get { return health <= 0; } }
+
+	/// <summary>
 	/// Maximum health in the health pool.
 	/// </summary>
 	[SerializeField] private int maxHealth = 100;

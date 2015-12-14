@@ -704,7 +704,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 405144}
-  - 114: {fileID: 11454132}
+  - 114: {fileID: 11485726}
   m_Layer: 0
   m_Name: Gameplay
   m_TagString: Untagged
@@ -1970,18 +1970,6 @@ MonoBehaviour:
   eastSprite: {fileID: 21300008, guid: 545bb9908a767474ca1644580faf1793, type: 3}
   southSprite: {fileID: 21300012, guid: 545bb9908a767474ca1644580faf1793, type: 3}
   westSprite: {fileID: 21300010, guid: 545bb9908a767474ca1644580faf1793, type: 3}
---- !u!114 &11454132
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 192718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b841281dd28984098a051949c6883f50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: Gameplay
 --- !u!114 &11456978
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2139,6 +2127,11 @@ MonoBehaviour:
   partySpread: .75
   rotateTime: .100000001
   partyMovementSpeed: 10
+  PartyDies:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &11469960
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2241,6 +2234,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11485726
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7973ede72e7d456ab42e0b0981eda82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: Gameplay
 --- !u!114 &11488788
 MonoBehaviour:
   m_ObjectHideFlags: 1

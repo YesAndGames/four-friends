@@ -31,7 +31,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181374}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.26999998, y: 2.73000002, z: 0}
+  m_LocalPosition: {x: -4.47745275, y: 5.06277561, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -163,10 +163,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a4f86622d2be4ab0bf2ac5469f851cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 11432284, guid: ecdfd38202bd34693a69154e872cce3d, type: 2}
-  numProjectiles: 4
-  attackInterval: 3
-  circularAttack: 1
+  projectilePrefab: {fileID: 11432284, guid: d3bfaab3aa17d4bd7b1f5f95aab1e211, type: 2}
+  numProjectiles: 1
+  attackInterval: 5
+  circularAttack: 0
 --- !u!212 &21222578
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -190,7 +190,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: -27
+  m_SortingOrder: -50
   m_Sprite: {fileID: 21300004, guid: c5ab6de6c33924b04bdf4039db3c0d63, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
@@ -227,7 +227,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: projectilePrefab
       value: 
-      objectReference: {fileID: 11432284, guid: e71427a63067f4252b09ac117dac3363,
+      objectReference: {fileID: 11432284, guid: d3bfaab3aa17d4bd7b1f5f95aab1e211,
         type: 2}
     - target: {fileID: 0}
       propertyPath: m_Constraints
@@ -239,7 +239,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: numProjectiles
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: circularAttack
@@ -260,6 +260,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: chanceToDropOnDeath.Array.data[0].chance
       value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: attackInterval
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

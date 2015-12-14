@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 /// <summary>
 /// Manages controls that affect the whole party.
@@ -26,6 +27,11 @@ public class Party : MonoBehaviour {
 	[SerializeField] private float partyMovementSpeed = 10f;
 
 	/// <summary>
+	/// Fires when the entire party dies.
+	/// </summary>
+	public UnityEvent PartyDies = new UnityEvent ();
+
+	/// <summary>
 	/// Initialize this component.
 	/// </summary>
 	void Start () {
@@ -39,6 +45,12 @@ public class Party : MonoBehaviour {
 		// Hook control events.
 		Controls.RotateLeft.AddListener (OnRotateLeft);
 		Controls.RotateRight.AddListener (OnRotateRight);
+
+		// Hook death listeners.
+		northFriend.GetComponent<HealthPool> ().Death.AddListener (OnPartyMemberDies);
+		eastFriend.GetComponent<HealthPool> ().Death.AddListener (OnPartyMemberDies);
+		southFriend.GetComponent<HealthPool> ().Death.AddListener (OnPartyMemberDies);
+		westFriend.GetComponent<HealthPool> ().Death.AddListener (OnPartyMemberDies);
 	}
 
 	/// <summary>
@@ -122,5 +134,17 @@ public class Party : MonoBehaviour {
 		westFriend = southFriend;
 		southFriend = eastFriend;
 		eastFriend = cachedFriend;
+	}
+
+	/// <summary>
+	/// Called when a party member dies.
+	/// </summary>
+	private void OnPartyMemberDies () {
+		if (northFriend.GetComponent<HealthPool> ().IsDead &&
+		    westFriend.GetComponent<HealthPool> ().IsDead &&
+		    southFriend.GetComponent<HealthPool> ().IsDead &&
+		    eastFriend.GetComponent<HealthPool> ().IsDead) {
+			PartyDies.Invoke ();
+		}
 	}
 }
