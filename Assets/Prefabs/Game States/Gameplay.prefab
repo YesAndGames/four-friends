@@ -2334,7 +2334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aecf230ed69348979700a8e67f6d255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPrefab: {fileID: 181374, guid: fd05f6d6146424214a2ee14b6a55bb91, type: 2}
+  spawnPrefab: {fileID: 181374, guid: 2a8b0d8fdf2554ac08896c7244b4ca94, type: 2}
   spawnsInfinitely: 0
   requiresTrigger: 1
   numSpawns: 3
