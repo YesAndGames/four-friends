@@ -80,7 +80,7 @@ MonoBehaviour:
   explosiveForce: 0
   penetrating: 0
   reflectsProjectiles: 0
-  dropOnDestroy: {fileID: 113884, guid: 3c3e2e1c155b946559ea4b3913570451, type: 2}
+  dropOnDestroy: {fileID: 0}
 --- !u!114 &11437418
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -180,7 +180,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: dropOnDestroy
       value: 
-      objectReference: {fileID: 113884, guid: 3c3e2e1c155b946559ea4b3913570451, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Constraints
       value: 4
