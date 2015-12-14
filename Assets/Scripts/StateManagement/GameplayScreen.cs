@@ -19,6 +19,6 @@ public class GameplayScreen : IGameState {
 	/// Call to invoke game over.
 	/// </summary>
 	private void OnGameOver () {
-		Debug.LogWarning ("game over");
+		PushState ("Game Over");
 	}
 }

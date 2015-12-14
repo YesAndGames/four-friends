@@ -14,7 +14,7 @@ public class MainMenu : IGameState {
 		base.OnInitializeState ();
 
 		AddHideableElement ("Sqwad", false);
-		EventSystem.current.firstSelectedGameObject = GuiCanvas.transform.Find ("Buttons Container/Play Button").gameObject;
+		EventSystem.current.SetSelectedGameObject (GuiCanvas.transform.Find ("Buttons Container/Play Button").gameObject);
 	}
 
 	/// <summary>

@@ -85,48 +85,6 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &59248519
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 172799504}
-    m_Modifications:
-    - target: {fileID: 405144, guid: 86021d5d0e95846d994603e5214db46e, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 405144, guid: 86021d5d0e95846d994603e5214db46e, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 405144, guid: 86021d5d0e95846d994603e5214db46e, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 405144, guid: 86021d5d0e95846d994603e5214db46e, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 405144, guid: 86021d5d0e95846d994603e5214db46e, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 405144, guid: 86021d5d0e95846d994603e5214db46e, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 405144, guid: 86021d5d0e95846d994603e5214db46e, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 405144, guid: 86021d5d0e95846d994603e5214db46e, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 86021d5d0e95846d994603e5214db46e, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &172799502
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,6 +115,7 @@ MonoBehaviour:
   gameStateList:
   - {fileID: 11485726, guid: 86021d5d0e95846d994603e5214db46e, type: 2}
   - {fileID: 11414662, guid: a6dea912b17bc4f6fb00a029856979f2, type: 2}
+  - {fileID: 11453214, guid: a4e41719158e84418877f34b51906e87, type: 2}
   initialGameStateId: Main Menu
 --- !u!4 &172799504
 Transform:
@@ -167,8 +126,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1421008858}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
 --- !u!1 &1224480524
@@ -245,7 +203,3 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!4 &1421008858 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 405144, guid: 86021d5d0e95846d994603e5214db46e, type: 2}
-  m_PrefabInternal: {fileID: 59248519}
