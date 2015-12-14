@@ -62,9 +62,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: .899999976}
   serializedVersion: 2
-  m_Size: {x: 1.20000005, y: 1.5}
+  m_Size: {x: 2.79999995, y: 2}
 --- !u!61 &6189118
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -75,9 +75,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: .899999976}
   serializedVersion: 2
-  m_Size: {x: 1.20000005, y: 1.5}
+  m_Size: {x: 2.79999995, y: 2}
 --- !u!95 &9530716
 Animator:
   serializedVersion: 3
@@ -111,7 +111,7 @@ MonoBehaviour:
   alwaysDropOnDeath: []
   chanceToDropOnDeath:
   - drop: {fileID: 125700, guid: 3e34be9c11e384585b2afbebc04f4553, type: 2}
-    chance: .100000001
+    chance: .75
   dropForce: 100
 --- !u!114 &11462228
 MonoBehaviour:
@@ -259,7 +259,7 @@ Prefab:
       objectReference: {fileID: 125700, guid: 3e34be9c11e384585b2afbebc04f4553, type: 2}
     - target: {fileID: 0}
       propertyPath: chanceToDropOnDeath.Array.data[0].chance
-      value: .100000001
+      value: .75
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: attackInterval
