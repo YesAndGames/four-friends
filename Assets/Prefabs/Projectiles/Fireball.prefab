@@ -15,6 +15,7 @@ GameObject:
   - 61: {fileID: 6169776}
   - 198: {fileID: 19830682}
   - 199: {fileID: 19938082}
+  - 111: {fileID: 11168364}
   m_Layer: 0
   m_Name: Fireball
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 113884}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -63,6 +64,21 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: .100000001}
+--- !u!111 &11168364
+Animation:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 113884}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 61b99f24bb9394b518b5e5762d81b0d2, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 61b99f24bb9394b518b5e5762d81b0d2, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &11432284
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -76,10 +92,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifespan: 3
   speed: 20
-  scaling: 1
+  scaling: 0
   damage: 10
   force: 100
+  explosiveForce: 0
   penetrating: 0
+  reflectsProjectiles: 0
   dropOnDestroy: {fileID: 113884, guid: 3c3e2e1c155b946559ea4b3913570451, type: 2}
 --- !u!114 &11437418
 MonoBehaviour:
@@ -1205,7 +1223,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0185681a4484b4e1e8fd895c96a5f493, type: 3}
+  m_Sprite: {fileID: 21300028, guid: 631fae7a99b02456c88882d67ef037b0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -1214,6 +1232,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Animations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: lifespan
       value: 3
@@ -1263,6 +1285,14 @@ Prefab:
       propertyPath: dropOnDestroy
       value: 
       objectReference: {fileID: 113884, guid: 3c3e2e1c155b946559ea4b3913570451, type: 2}
+    - target: {fileID: 0}
+      propertyPath: scaling
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 7400000, guid: 61b99f24bb9394b518b5e5762d81b0d2, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 113884}
