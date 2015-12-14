@@ -141,7 +141,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  maxHealth: 100
+  maxHealth: 1000
 --- !u!114 &11462428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -281,6 +281,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: attackInterval
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxHealth
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
