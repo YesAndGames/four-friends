@@ -75,10 +75,11 @@ MonoBehaviour:
   lifespan: .5
   speed: 2
   scaling: 1
-  damage: 100
+  damage: 200
   force: 100
   explosiveForce: 1
   penetrating: 1
+  reflectsProjectiles: 0
   dropOnDestroy: {fileID: 0}
 --- !u!114 &11437418
 MonoBehaviour:
@@ -163,7 +164,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: damage
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: moveWithTransform
