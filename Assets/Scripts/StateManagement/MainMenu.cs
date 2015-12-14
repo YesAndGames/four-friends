@@ -16,11 +16,16 @@ public class MainMenu : IGameState {
 		// Register hideables.
 		AddHideableElement ("Sqwad", false);
 		AddHideableElement ("Controls");
+		AddHideableElement ("Credits");
 
-		// Hook listeners for closing controls after shown.
+		// Hook listeners for closing menus after shown.
 		GetGUIElement ("Controls").OnShown.AddListener ((h) => {
 			Controls.Select.AddListener (HideControls);
 			Controls.Cancel.AddListener (HideControls);
+		});
+		GetGUIElement ("Credits").OnShown.AddListener ((h) => {
+			Controls.Select.AddListener (HideCredits);
+			Controls.Cancel.AddListener (HideCredits);
 		});
 
 		// Initialize start selection.
@@ -41,6 +46,14 @@ public class MainMenu : IGameState {
 	/// </summary>
 	public void OnPressControlsButton () {
 		ShowGUIElement ("Controls");
+		SetAllButtonsEnabled (false);
+	}
+
+	/// <summary>
+	/// Called when the user presses the credits button.
+	/// </summary>
+	public void OnPressCreditsButton () {
+		ShowGUIElement ("Credits");
 		SetAllButtonsEnabled (false);
 	}
 
@@ -66,6 +79,16 @@ public class MainMenu : IGameState {
 		SetAllButtonsEnabled (true);
 		Controls.Select.RemoveListener (HideControls);
 		Controls.Cancel.RemoveListener (HideControls);
+	}
+
+	/// <summary>
+	/// Hide the credits screen.
+	/// </summary>
+	private void HideCredits () {
+		HideGUIElement ("Credits");
+		SetAllButtonsEnabled (true);
+		Controls.Select.RemoveListener (HideCredits);
+		Controls.Cancel.RemoveListener (HideCredits);
 	}
 
 	/// <summary>
