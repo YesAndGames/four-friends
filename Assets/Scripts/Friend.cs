@@ -108,5 +108,10 @@ public class Friend : MonoBehaviour {
 
 		// Turn attack on/off.
 		GetComponent<AttackController> ().enabled = alive;
+
+		// If dead, play that animation.
+		if (!alive) {
+			GetComponent<Animator> ().Play ("Dead", -1, 0);
+		}
 	}
 }
